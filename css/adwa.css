@@ -101,6 +101,12 @@ body::-webkit-scrollbar {
     margin-bottom: -5px;
 }
 
+.white-section {
+    background-color: white !important;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
 footer {
     background-color: black !important;
     margin-top: -5px;
