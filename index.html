@@ -81,16 +81,24 @@
 
     <style>
         .background-image {
-    background-image: url('images/farra/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* Add more CSS properties as desired */
+            background-image: url('images/farra/background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Add more CSS properties as desired */
     
-    }
-
-   
+            /* Set background size to cover on larger screens */
+            background-size: cover;
+        }
+    
+        /* Media query for smaller screens like iPhones */
+        @media screen and (max-width: 768px) {
+            .background-image {
+                /* Adjust background size for smaller screens */
+                background-size: contain;
+            }
+        }
     </style>
+    
 
     <!-- Main Content -->
     <main class="text-light background-image" data-bs-spy="scroll" data-bs-target="#navbar-menus" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
