@@ -14,7 +14,7 @@
     <!-- SEO Tag -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Wedding of Adwa and Farra" />
-    <meta property="og:image" content="images/ico/5.png" />
+    <meta property="og:image" content="images/ico/card.png" />
     <meta property="og:site_name" content="The Wedding of Adwa and Farra" />
     <meta property="og:description" content="Hey there! You are invited to our Wedding!!" />
 
@@ -43,42 +43,30 @@
 </head>
 
 <style>
-    .background-image {
-        background-image: url('images/adwa/background.png');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-    }
+    /* Default background image for all screens */
+      .background-image {
+          background-image: url('images/adwa/background.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+      }
 
-    .background-overlay {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/e1.JPG');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    opacity: 1;
-    }
+      /* Overlay background for all screen sizes */
+      .background-overlay {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/e1.JPG');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          opacity: 1;
+      }
 
-    @media (max-width: 375px) {
-    .background-overlay {
-        min-width: 375px;
-        min-height: 667px;
-    }
-    }
-
-    @media (min-width: 375px) and (max-width: 414px) {
-    .background-overlay {
-        min-width: 375px;
-        min-height: 812px;
-    }
-    }
-
-    @media (min-width: 414px) {
-    .background-overlay {
-        min-width: 414px;
-        min-height: 896px;
-    }
-    }   
-</style>
+      /* Adjust background size for smaller screens */
+      @media (max-width: 768px) {
+          .background-overlay {
+              background-size: contain; /* Adjust as needed for smaller screens */
+          }
+      }
+  </style>
 
 <body data-email="user@example.com" data-password="12345678" data-url="https://api.ulems.my.id/" style="overflow-y: hidden;">
 

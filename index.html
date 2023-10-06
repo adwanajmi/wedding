@@ -81,41 +81,29 @@
     </nav>
 
     <style>
+      /* Default background image for all screens */
         .background-image {
             background-image: url('images/farra/beige.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
-    
+
+        /* Overlay background for all screen sizes */
         .background-overlay {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/farra/background.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        opacity: 1;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/farra/background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            opacity: 1;
         }
-    
-        @media (max-width: 375px) {
-        .background-overlay {
-            min-width: 375px;
-            min-height: 667px;
+
+        /* Adjust background size for smaller screens */
+        @media (max-width: 768px) {
+            .background-overlay {
+                background-size: contain; /* Adjust as needed for smaller screens */
+            }
         }
-        }
-    
-        @media (min-width: 375px) and (max-width: 414px) {
-        .background-overlay {
-            min-width: 375px;
-            min-height: 812px;
-        }
-        }
-    
-        @media (min-width: 414px) {
-        .background-overlay {
-            min-width: 414px;
-            min-height: 896px;
-        }
-        }   
     </style>
     
 
