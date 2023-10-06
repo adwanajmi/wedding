@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/adwa.css">
 </head>
 
 <body data-email="user@example.com" data-password="12345678" data-url="https://api.ulems.my.id/" style="overflow-y: hidden;">
@@ -361,34 +361,56 @@
                     <h1 class="font-esthetic mt-0 mb-3" style="font-size: 3rem;">Love Gift</h1>
 
                     <p class="mb-1" style="font-size: 0.9rem;">
-                        Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,
-                        dapat melalui :
+                        Without diminishing respect, for those of you who would like to show your love for us,
+                        you can do so through:
                     </p>
 
                     <div class="overflow-x-hidden">
                         <div class="row justify-content-center">
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" data-aos="fade-down" data-aos-duration="1500">
-                                <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png" class="img-fluid rounded" width="150" alt="bni">
+                                <img src="images/adwa/maybank.png" class="img-fluid rounded" width="150" alt="bni">
 
-                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">No. Rekening 123456789</p>
+                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Bank Account 123456789</p>
                                 <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
 
                                 <!-- Ubah juga data-nomer sesuai dengan no rekening -->
-                                <button class="btn btn-light btn-sm rounded-3" data-nomer="123456789" onclick="salin(this)" autofocus>Salin No. Rekening</button>
+                                <button class="btn btn-light btn-sm rounded-3" data-nomer="123456789" onclick="salin(this)" autofocus>Copy Bank Account</button>
                             </div>
 
                             <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" data-aos="fade-down" data-aos-duration="1500">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/2560px-BANK_BRI_logo.svg.png" class="img-fluid rounded" width="150" alt="bri">
+                                <img src="images/adwa/cimb.png" class="img-fluid rounded" width="150" alt="bri">
 
-                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">No. Rekening 123456789</p>
+                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Bank Account 123456789</p>
                                 <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
 
                                 <!-- Ubah juga data-nomer sesuai dengan no rekening -->
-                                <button class="btn btn-light btn-sm rounded-3" data-nomer="123456789" onclick="salin(this)" autofocus>Salin No. Rekening</button>
-                            </div>
+                                <button class="btn btn-light btn-sm rounded-3" data-nomer="123456789" onclick="salin(this)" autofocus>Copy Bank Account</button>
+                            </div>     
                         </div>
                     </div>
+
+                    <p class="mb-1" style="font-size: 0.9rem;">
+                        Or you can QR
+                    </p>
+
+                    <div class="overflow-x-hidden">
+                        <div class="row justify-content-center">
+
+                            <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" data-aos="fade-down" data-aos-duration="1500">
+                                <img src="images/qr.png" class="img-fluid rounded" width="150" alt="bni">
+
+                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Bank Account 123456789</p>
+                                <p class="card-text" style="font-size: 0.9rem;">a.n Lorem ipsum dolor</p>
+
+                                <!-- Ubah juga data-nomer sesuai dengan no rekening -->
+                                <button class="btn btn-light btn-sm rounded-3" data-nomer="123456789" onclick="salin(this)" autofocus>Copy Bank Account</button>
+                            </div>
+
+                           
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -499,24 +521,26 @@
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
 
             <div class="text-center">
-                <h1>IJAB QABUL</h1>
+                <h1>YOU ARE INVITED TO OUR WEDDING</h1>
 
                 <div class="img-crop border border-3 border-light shadow mb-4 mx-auto">
-                    <img src="images/farra/logo.svg" width="100" height="100">
+                    <img src="images/e2.JPG" width="100" height="100">
                 </div>
 
-                <h1>ASSALAMUALAIKUM WARAHMATULLAHI WABARAKATUH</h1>
+                <H1>Adwa Najmi & Farra Natasya</H1>
                 <div id="nama-tamu"></div>
 
                 <button type="button" class="btn btn-light shadow rounded-4 mt-4" onclick="buka()">
-                    <i class="fa-solid fa-envelope-open me-2"></i>Buka
+                    <i class="fa-solid fa-envelope-open me-2"></i>Open
                 </button>
+
+                
             </div>
         </div>
     </div>
 
     <!-- Audio Button -->
-    <button type="button" id="tombol-musik" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music" onclick="play(this)" data-status="true" data-url="./assets/music/sound.mp3">
+    <button type="button" id="tombol-musik" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music" onclick="play(this)" data-status="true" data-url="./assets/music/openingsong.mp3">
         <i class="fa-solid fa-circle-pause"></i>
     </button>
 
@@ -555,7 +579,7 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js" integrity="sha256-XG5M9shcLLpu8ct5bVbu6lLVzLpfZChl+csxdyLVP18=" crossorigin="anonymous"></script>
 
     <!-- Custom JS -->
-    <script src="./js/app.js"></script>
+    <script src="./js/adwa.js"></script>
 </body>
 
 </html>
