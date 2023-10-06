@@ -18,6 +18,11 @@ body::-webkit-scrollbar {
     color: #ffffff !important;
 }
 
+.font-esthetic-dwa {
+    font-family: 'Sacramento', cursive !important;
+    color: black !important;
+}
+
 .img-crop {
     width: 14rem;
     height: 14rem;
