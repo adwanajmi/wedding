@@ -346,51 +346,17 @@
 
         <!-- Ucapan -->
         <section class="m-0 p-0" id="ucapan">
-            <div class="container">
-                <div class="card border rounded-4 shadow p-3">
-                    <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem; color: black;">Ucapan & Doa</h1>
+            <div class="container" style="color: black;">
+
+                <div class="card-body border rounded-4 shadow p-3">
+                    <h1 class="font-esthetic-dwa text-center mb-3" style="font-size: 3rem;">RSVP</h1>
                     <div class="mb-1" id="balasan"></div>
-            
-                    <div class="mb-3">
-                        <label for="form-nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Sila isi">
-                    </div>
-            
-                    <div class="mb-3">
-                        <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
-                        <select class="form-select shadow-sm" id="form-kehadiran">
-                            <option value="0" selected>Sila isi</option>
-                            <option value="1">Hadir</option>
-                            <option value="2">Tidak</option>
-                        </select>
-                    </div>
-            
-                    <div class="mb-3">
-                        <label for="form-pesan" class="form-label">Ucapan & Doa</label>
-                        <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
-                    </div>
-            
-                    <div class="d-flex">
-                        <button class="flex-fill btn btn-danger btn-sm rounded-3 shadow m-1" style="display: none;" onclick="comment.batal()" id="batal">
-                            Batal<i class="fa-solid fa-xmark ms-1"></i>
-                        </button>
-                        <button class="flex-fill btn btn-success btn-sm rounded-3 shadow m-1" style="display: none;" onclick="comment.reply()" id="reply">
-                            Balas<i class="fa-solid fa-reply ms-1"></i>
-                        </button>
-                        <button class="flex-fill btn btn-warning btn-sm rounded-3 shadow m-1" style="display: none;" onclick="comment.ubah()" id="ubah">
-                            Edit<i class="fa-solid fa-pen-to-square ms-1"></i>
-                        </button>
-                        <button class="flex-fill btn btn-primary btn-sm rounded-3 shadow m-1" onclick="comment.kirim()" id="kirim">
-                            Hantar<i class="fa-solid fa-paper-plane ms-1"></i>
-                        </button>
-                    </div>
+                    <iframe class="embed-responsive-item" src="https://docs.google.com/forms/d/e/1FAIpQLSfVQPfKf-0fN68b5fD2Ev1qlf8wD-Blc-MHduggxnWIHrTuxA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" style="width: 100%; height: 500px;">Loading…</iframe>
                 </div>
-            
-                <div class="rounded-4 mt-4 mb-2" id="daftar-ucapan"></div>
-            
-               
+                
+
+                <div class="rounded-4 mt-4 mb-2" id="daftar-ucapan" hidden></div>
             </div>
-            
         </section>
 
         <!-- Wave Separator -->
