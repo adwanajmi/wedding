@@ -121,9 +121,27 @@
                 <h1 style="color: black;">Farra Natasya & Adwa Najmi</h1>
                 <h4 style="color: black;">Ahad, 24 December 2023</h4>
 
-                <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2" target="_blank" href="" style="background-color: #ffdbac; color: #fff;">
+                <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2" target="_blank" href="" style="background-color: #ffdbac; color: black;">
                     <i class="fa-solid fa-calendar-check me-2"></i>Save The Date
                 </a>
+
+                <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
+                    <!-- Change the data-waktu attribute to the target date and time -->
+                    <div class="row justify-content-center" data-waktu="2023-12-24 10:00:00" id="tampilan-waktu">
+                        <div class="col-3 p-1">
+                            <h2 class="d-inline m-0 p-0 text-black" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Hari</small>
+                        </div>
+                        <div class="col-3 p-1">
+                            <h2 class="d-inline m-0 p-0 text-black" id="jam">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Jam</small>
+                        </div>
+                        <div class="col-3 p-1">
+                            <h2 class="d-inline m-0 p-0 text-black" id="menit">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Menit</small>
+                        </div>
+                        <div class="col-3 p-1">
+                            <h2 class="d-inline m-0 p-0 text-black" id="detik">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Detik</small>
+                        </div>
+                    </div>
+                </div>
                 
 
                 <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
@@ -131,8 +149,9 @@
                         <div class="scroll-animation"></div>
                     </div>
                 </div>
-
-                <p class="m-0">Scroll Down</p>
+                
+                <p class="m-0 text-black">Scroll Down</p>
+                
             </div>
         </section>
 
@@ -171,8 +190,9 @@
                         <h1>Farra Natasya binti Ahmad Husairi</h1>
                   
                     </div>
-
-                    <h1 class="font-esthetic my-4" style="font-size: 4rem;">&</h1>
+                    <div data-aos="fade-left" data-aos-duration="2000">
+                    <h1>&</h1>
+                    </div>
 
                     <div data-aos="fade-left" data-aos-duration="2000">
                         <!-- <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
@@ -250,25 +270,6 @@
                             <hr>
                             <h2>10.00 AM: UPACARA IJAB & QABUL</h2>
                     
-                    <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
-
-                        <!-- Ganti waktunya pada data-waktu (sesuai format tersebut) -->
-                        <div class="row justify-content-center" data-waktu="2024-01-01 00:00:00" id="tampilan-waktu">
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="jam">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Jam</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="menit">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Menit</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0" id="detik">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Detik</small>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- <p style="font-size: 0.9rem;" class="mt-4 py-2">
                         Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, insyaAllah kami akan menyelenggarakan
                         acara :
@@ -297,78 +298,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Galeri Foto -->
-        <!-- <section class="dark-section" id="galeri">
-
-            <div class="container pb-2 pt-4">
-                <div class="card-body border rounded-4 shadow p-3">
-
-                    <h1 class="font-esthetic text-center py-3" data-aos="fade-down" data-aos-duration="1500" style="font-size: 2rem;">Galeri</h1>
-
-                    <div id="carousel-foto-satu" data-aos="fade-up" data-aos-duration="1500" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carousel-foto-satu" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carousel-foto-satu" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carousel-foto-satu" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-
-                        <div class="carousel-inner rounded-4">
-                            <div class="carousel-item active">
-                                <img src="https://picsum.photos/1280/720?random=1" class="d-block w-100" onclick="modalFoto(this)">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://picsum.photos/1280/720?random=2" class="d-block w-100" onclick="modalFoto(this)">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://picsum.photos/1280/720?random=3" class="d-block w-100" onclick="modalFoto(this)">
-                            </div>
-                        </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-foto-satu" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-foto-satu" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-
-                    <div id="carousel-foto-dua" data-aos="fade-up" data-aos-duration="1500" class="carousel slide mt-4" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carousel-foto-dua" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carousel-foto-dua" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carousel-foto-dua" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-
-                        <div class="carousel-inner rounded-4">
-                            <div class="carousel-item active">
-                                <img src="https://picsum.photos/1280/720?random=4" class="d-block w-100" onclick="modalFoto(this)">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://picsum.photos/1280/720?random=5" class="d-block w-100" onclick="modalFoto(this)">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://picsum.photos/1280/720?random=6" class="d-block w-100" onclick="modalFoto(this)">
-                            </div>
-                        </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-foto-dua" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-foto-dua" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-    
 
         <!-- Hadiah -->
         <!-- <div class="container">
@@ -411,30 +340,29 @@
         <!-- Ucapan -->
         <section class="m-0 p-0" id="ucapan">
             <div class="container">
-
-                <div class="card-body border rounded-4 shadow p-3">
-                    <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem;">Ucapan & Doa</h1>
+                <div class="card border rounded-4 shadow p-3">
+                    <h1 class="font-esthetic text-center mb-3" style="font-size: 3rem; color: black;">Ucapan & Doa</h1>
                     <div class="mb-1" id="balasan"></div>
-
+            
                     <div class="mb-3">
                         <label for="form-nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Isikan Nama Anda">
+                        <input type="text" class="form-control shadow-sm" id="form-nama" placeholder="Sila isi">
                     </div>
-
+            
                     <div class="mb-3">
                         <label for="form-kehadiran" class="form-label" id="label-kehadiran">Kehadiran</label>
                         <select class="form-select shadow-sm" id="form-kehadiran">
-                            <option value="0" selected>Konfirmasi Kehadiran</option>
+                            <option value="0" selected>Sila isi</option>
                             <option value="1">Hadir</option>
-                            <option value="2">Berhalangan</option>
+                            <option value="2">Tidak</option>
                         </select>
                     </div>
-
+            
                     <div class="mb-3">
                         <label for="form-pesan" class="form-label">Ucapan & Doa</label>
                         <textarea class="form-control shadow-sm" id="form-pesan" rows="4" placeholder="Tulis Ucapan & Doa"></textarea>
                     </div>
-
+            
                     <div class="d-flex">
                         <button class="flex-fill btn btn-danger btn-sm rounded-3 shadow m-1" style="display: none;" onclick="comment.batal()" id="batal">
                             Batal<i class="fa-solid fa-xmark ms-1"></i>
@@ -446,13 +374,13 @@
                             Edit<i class="fa-solid fa-pen-to-square ms-1"></i>
                         </button>
                         <button class="flex-fill btn btn-primary btn-sm rounded-3 shadow m-1" onclick="comment.kirim()" id="kirim">
-                            Kirim<i class="fa-solid fa-paper-plane ms-1"></i>
+                            Hantar<i class="fa-solid fa-paper-plane ms-1"></i>
                         </button>
                     </div>
                 </div>
-
+            
                 <div class="rounded-4 mt-4 mb-2" id="daftar-ucapan"></div>
-
+            
                 <nav class="d-flex justify-content-center mb-0">
                     <ul class="pagination mb-0">
                         <li class="page-item disabled" id="previous">
@@ -465,12 +393,13 @@
                         </li>
                         <li class="page-item" id="next">
                             <button class="page-link" onclick="pagination.next(this)" aria-label="Next">
-                                Selanjutnya<i class="fa-solid fa-circle-right ms-1"></i>
+                                Seterusnya<i class="fa-solid fa-circle-right ms-1"></i>
                             </button>
                         </li>
                     </ul>
                 </nav>
             </div>
+            
         </section>
 
         <!-- Wave Separator -->
@@ -506,10 +435,9 @@
                     </div>
                 </div> -->
 
-                <div class="col-md-12 text-center">
+                <div class="col-md-12 text-center" style="color: black;">
                     <img src="images/farra/logo.svg" width="100" height="100">
                     <br>
-                    <!-- <h1 style="font-family: 'Satisfy', Arial, serif">Farra & Adwa</h1> -->
                     &copy; 2023 Developed by Adwa Najmi. All rights reserved.
                     <br><br><br>
 
@@ -545,17 +473,17 @@
     </button>
 
     <!-- Loading page -->
-    <div class="loading-page" id="loading" style="opacity: 1;">
+    <!-- <div class="loading-page" id="loading" style="opacity: 1;">
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
             <div class="text-center w-75">
-                <img class="img-fluid mb-3" src="./images/farra/logo.svg" alt="icon" style="width: 3.5rem;">
+                <img class="img-fluid mb-3" src="./images/farra/logo.jpeg" alt="icon" style="width: 3.5rem;">
                 <div class="progress" role="progressbar" style="height: 0.5rem;">
                     <div class="progress-bar" id="bar" style="width: 0%"></div>
                 </div>
                 <small class="mt-1" id="progress-info">Loading asset</small>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Modal Foto Large -->
     <div class="modal fade" id="modalFoto" tabindex="-1" aria-labelledby="modalFotoLabel" aria-hidden="true">
