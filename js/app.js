@@ -20,12 +20,8 @@ const progressBar = (() => {
 
             window.scrollTo(0, 0);
 
-            // tamu();
-
-            // Add a delay before calling opacity
-            setTimeout(() => {
-                opacity('loading');
-            }, 1000); // Adjust the delay time as needed (1 second in this example)
+            tamu();
+            opacity('loading');
         }
     };
 
@@ -41,7 +37,6 @@ const progressBar = (() => {
         }
     });
 })();
-
 
 const audio = (() => {
     let instance = null;
@@ -829,8 +824,6 @@ const animation = () => {
 
 // OK
 const buka = async () => {
-    console.log("buka function started");
-
     document.getElementById('daftar-ucapan').innerHTML = comment.renderLoading(pagination.getPer());
     document.querySelector('body').style.overflowY = 'scroll';
 
@@ -847,8 +840,6 @@ const buka = async () => {
 
     await login();
     timer();
-    console.log("buka function completed");
-
 };
 
 // OK
