@@ -91,13 +91,13 @@ body::-webkit-scrollbar {
 }
 
 .dark-section {
-    background-color: #111111 !important;
+    background-color: #ffdbac !important;
     margin-top: -5px;
     margin-bottom: -5px;
 }
 
 footer {
-    background-color: #111111 !important;
+    background-color: #ffdbac !important;
     margin-top: -5px;
     padding-bottom: 4rem;
 }
