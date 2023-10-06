@@ -778,10 +778,10 @@ const timer = () => {
             return;
         }
 
-        document.getElementById('hari').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-        document.getElementById('jam').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        document.getElementById('menit').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        document.getElementById('detik').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById('Days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById('Hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById('Minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('Seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
     }, 1000);
 };
 
