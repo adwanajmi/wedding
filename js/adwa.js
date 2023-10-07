@@ -975,3 +975,22 @@ const opacity = (nama) => {
         }
     }, 10);
 };
+
+function downloadQRImage(button) {
+    const imageSrc = button.parentElement.querySelector('img').src;
+
+    // Create a temporary anchor element to trigger the download
+    const downloadLink = document.createElement('a');
+    downloadLink.href = imageSrc;
+    downloadLink.download = 'qr.png'; // Set the desired file name here
+    downloadLink.style.display = 'none';
+    
+    // Append the anchor element to the document
+    document.body.appendChild(downloadLink);
+
+    // Trigger the click event on the anchor element
+    downloadLink.click();
+
+    // Clean up by removing the anchor element
+    document.body.removeChild(downloadLink);
+}
