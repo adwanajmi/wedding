@@ -54,8 +54,7 @@
       /* Overlay background for all screen sizes */
       .background-overlay {
           /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/adwa/friends.webp'); */
-          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/e1.JPG');
-
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/background1.png');
           background-repeat: no-repeat;
           background-attachment: fixed;
           background-size: contain;
@@ -68,6 +67,17 @@
               background-size: contain;
           }
       }
+
+      @font-face {
+            font-family: 'Libre';
+            src: url('assets/Libre/regular.ttf') format('truetype'); /* Specify the path to your Lustria font file */
+        }
+
+        /* Apply the Lustria font to your heading element */
+        h1, h2, h3, h4, h5, h6, p {
+            font-family: 'Libre', sans-serif; /* Use Lustria as the primary font, and fall back to a generic sans-serif font if it's not available */
+            /* Additional CSS styling for your headings and paragraphs, if needed */
+        }
   </style>
 
 <body data-email="user@example.com" data-password="12345678" data-url="https://api.ulems.my.id/" style="overflow-y: hidden;">
@@ -83,22 +93,30 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#mempelai">
-                    <img src="images/ico/4.png" alt="Image Description" style="height: 30px;">
+                    <img src="images/ico/3.png" alt="Image Description" style="height: 30px;">
                     <!-- <span class="d-block" style="font-size: 0.7rem;">Mempelai</span> -->
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#tanggal">
-                    <img src="images/ico/diam.png" alt="Image Description" style="height: 30px;">
+                    <img src="images/ico/open.png" alt="Image Description" style="height: 30px;">
                     <!-- <span class="d-block" style="font-size: 0.7rem;">Tanggal</span> -->
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#galeri">
-                    <img src="images/ico/location.png" alt="Image Description" style="height: 30px;">
+                    <img src="images/ico/gallery.png" alt="Image Description" style="height: 30px;">
                     <!-- <span class="d-block" style="font-size: 0.7rem;">Galeri</span> -->
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#gift">
+                    <img src="images/ico/qr.png" alt="Image Description" style="height: 30px;">
+                    <!-- <span class="d-block" style="font-size: 0.7rem;">Galeri</span> -->
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="#ucapan">
                     <img src="images/ico/card.png" alt="Image Description" style="height: 30px;">
@@ -211,7 +229,7 @@
         </svg>
 
         <!-- Firman Allah Subhanahu Wa Ta'ala -->
-        <div class="container">
+        <div class="container" id="tanggal">
             <div class="text-center" data-aos="fade-up" data-aos-duration="2000" style="color: black;">
                 <h3 class="text-center">Located at:</h3>
         
@@ -370,7 +388,7 @@
         </svg>
 
         <!-- Hadiah -->
-        <div class="container">
+        <div class="container" id="gift">
             <div class="py-4">
 
                 <div class="text-center" style="color: black;">
