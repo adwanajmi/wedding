@@ -53,7 +53,7 @@
 
       /* Overlay background for all screen sizes */
       .background-overlay {
-          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/adwa/iphone.jpeg');
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/adwa/friends.webp');
           background-repeat: no-repeat;
           background-attachment: fixed;
           background-size: cover;
@@ -87,7 +87,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#tanggal">
-                    <img src="images/ico/2.png" alt="Image Description" style="height: 30px;">
+                    <img src="images/ico/diam.png" alt="Image Description" style="height: 30px;">
                     <!-- <span class="d-block" style="font-size: 0.7rem;">Tanggal</span> -->
                 </a>
             </li>
@@ -113,25 +113,42 @@
         <section class="container" id="home">
 
             <div class="text-center pt-4" style="color: black;">
-                <h1 class="font-esthetic-dwa my-4" style="font-size: 2.5rem;">Wedding of</h1>
-
+                <h1 class="font-esthetic-dwa my-4" style="font-size: 2.5rem;">The Wedding of</h1>
                 <img src="images/adwa/1.png" width="40%" height="40%">
-
-
                 <div class="py-4">
                     <div class="img-crop border border-3 border-light shadow mx-auto">
-                        <img src="./images/farra/us.jpg" alt="bg" onclick="modalFoto(this)">
+                        <img src="./images/e2.JPG" alt="bg" onclick="modalFoto(this)">
                     </div>
                 </div>
 
                 <h1 class="font-esthetic-dwa">Adwa Najmi <br> & <br> Farra Natasya</h1>
 
                 
-                <h4>Sunday, 24 December 2023</h4>
 
                 <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2" target="_blank" href="" style="color: black;">
                     <i class="fa-solid fa-calendar-check me-2"></i>Save The Date
                 </a>
+                
+                <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
+                    <h4>Sunday, 24 December 2023</h4>
+
+                    <!-- Change the data-waktu attribute to the target date and time -->
+                    <div class="row justify-content-center" data-waktu="2023-12-24 10:00:00" id="tampilan-waktu">
+                        <div class="col-3 p-1">
+                            <h2 class="d-inline m-0 p-0 text-black" id="Days">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Days</small>
+                        </div>
+                        <div class="col-3 p-1">
+                            <h2 class="d-inline m-0 p-0 text-black" id="Hours">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Hours</small>
+                        </div>
+                        <div class="col-3 p-1">
+                            <h2 class="d-inline m-0 p-0 text-black" id="Minutes">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Minutes</small>
+                        </div>
+                        <div class="col-3 p-1">
+                            <h2 class="d-inline m-0 p-0 text-black" id="Seconds">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Seconds</small>
+                        </div>
+                    </div>
+                    
+                </div>
 
                 <div class="d-flex justify-content-center align-items-center mt-4 mb-2">
                     <div class="mouse-animation">
@@ -171,20 +188,19 @@
 
                 <div class="overflow-x-hidden">
                     <div data-aos="fade-left" data-aos-duration="2000">
-                        <!-- <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
-                            <img src="./assets/images/cewe.png" alt="cewe" onclick="modalFoto(this)">
-                        </div> -->
+                        <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
+                            <img src="./images/gallery/adwa.jpg" alt="cewe" onclick="modalFoto(this)">
+                        </div>
                         <h1>
-                            Muhammad Adwa Najmi bin Rosmadi</h1>
+                            Muhammad Adwa Najmi bin Rosmadi</h1><br>&
                     
                     </div>
 
                     <div data-aos="fade-right" data-aos-duration="2000">
-                        <!-- <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
-                            <img src="./assets/images/cowo.png" alt="cowo" onclick="modalFoto(this)">
-                        </div> -->
+                        <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
+                            <img src="./images/gallery/farra.jpg" alt="cowo" onclick="modalFoto(this)">
+                        </div>
                         <h1>
-                            & <br>
                             Farra Natasya binti Ahmad Husairi</h1>
                   
                     </div>
@@ -201,9 +217,8 @@
         <!-- Firman Allah Subhanahu Wa Ta'ala -->
         <div class="container">
             <div class="text-center" data-aos="fade-up" data-aos-duration="2000" style="color: black;">
-
-                <h3 class="text-center">Bertempat di:</h3>
-
+                <h3 class="text-center">Located at:</h3>
+        
                 <div class="event-col">
                     <i class="icon-calendar"></i>
                     <h3 class="text-center">
@@ -211,45 +226,46 @@
                         LEVEL 1, CONCORDE BALLROOM, CONCORDE HOTEL KUALA LUMPUR</h3>
                 </div>
                 <hr>
-                <h4 style="font-family: 'Courgette', Arial, serif">Dresscode:</h4>
-                                        <div class="program-item">
-											<img src="images/ico/dresscode.png" alt="Hotel Icon" width="25" height="25" class="margin-right">- Baju Melayu Traditional only
-                                        </div>   
-    
+                <h4 style="font-family: 'Courgette', Arial, serif">Dress code:</h4>
+                <div class="program-item">
+                    <img src="images/ico/dresscode.png" alt="Dress Code Icon" width="25" height="25" class="margin-right">- Traditional Malay attire only
+                </div>
+        
                 <div class="event-col">
                     <i class="icon-clock"></i>
-                    <span>10:00AM - 2:00PM</span>
+                    <span>10:00 AM - 2:00 PM</span>
                 </div>
-    
+        
                 <hr>
-    
-                <a href="https://www.google.com/maps/place/Concorde+Hotel+Kuala+Lumpur/@3.1552878,101.7033061,17z/data=!3m2!4b1!5s0x31cc482a0da76a3b:0xcb8966c57a13a309!4m10!3m9!1s0x31cc482a3d602131:0x6473062a3b5dad97!5m3!1s2023-12-23!4m1!1i2!8m2!3d3.1552878!4d101.705881!16s%2Fg%2F1vfzbpgd?entry=ttu" target="_blank"
-                    class="btn btn-primary">Open in Google Maps
+        
+                <a href="https://www.google.com/maps/place/Concorde+Hotel+Kuala+Lumpur/@3.1552878,101.7033061,17z/data=!3m2!4b1!5s0x31cc482a0da76a3b:0xcb8966c57a13a309!4m10!3m9!1s0x31cc482a3d602131:0x6473062a3b5dad97!5m3!1s2023-12-23!4m1!1i2!8m2!3d3.1552878!4d101.705881!16s%2Fg%2F1vfzbpgd?entry=ttu" target="_blank" class="btn btn-primary">Open in Google Maps
                     <i class="fas fa-location-arrow"></i>
                 </a>
-    
+        
                 <a href="https://waze.com/ul?ll=3.1552878,101.705881&navigate=yes" target="_blank" class="btn btn-primary">Open in Waze
                     <i class="fab fa-waze"></i>
-
                 </a>
-                
+        
                 <hr>
-
-               <h4>SEMOGA DENGAN KEHADIRAN DAN DOA RESTU PARA TETAMU AKAN MENYERIKAN MAJLIS KAMI SERTA MENDAPAT KEBERKATAN DARI ALLAH S.W.T JUA HENDAKNYA</h4>
+        
+                <h4>WITH THE PRESENCE AND BLESSINGS OF OUR GUESTS, MAY OUR CEREMONY BE JOYOUS AND BLESSED BY ALLAH SWT</h4>
+        
                 <hr>
-               <h4>Hubungi Kami;</h4>
-
-               <a href="https://wa.me/60192130511" target="_blank" class="btn btn-success">
-                   <i class="fab fa-whatsapp"></i>
-                   Rosmadi Saad
-               </a>
-
-               <a href="https://wa.me/60193556920" target="_blank" class="btn btn-success">
-                   <i class="fab fa-whatsapp"></i>
-                   Siti Haida
-               </a>
+        
+                <h4>Contact Us:</h4>
+        
+                <a href="https://wa.me/60192130511" target="_blank" class="btn btn-success">
+                    <i class="fab fa-whatsapp"></i>
+                    Rosmadi Saad
+                </a>
+        
+                <a href="https://wa.me/60193556920" target="_blank" class="btn btn-success">
+                    <i class="fab fa-whatsapp"></i>
+                    Siti Haida
+                </a>
             </div>
         </div>
+        
 
         <!-- Wave Separator -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -258,44 +274,27 @@
         </svg>
 
         <!-- Tanggal -->
-        <section class="white-section" id="tanggal">
+        <section class="white-section" id="date">
 
             <div class="container">
                 <div class="text-center" style="color: black;">
-                    <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
-                        <!-- Change the data-waktu attribute to the target date and time -->
-                        <div class="row justify-content-center" data-waktu="2023-12-24 10:00:00" id="tampilan-waktu">
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0 text-black" id="Days">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Days</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0 text-black" id="Hours">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Hours</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0 text-black" id="Minutes">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Minutes</small>
-                            </div>
-                            <div class="col-3 p-1">
-                                <h2 class="d-inline m-0 p-0 text-black" id="Seconds">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline text-black">Seconds</small>
-                            </div>
-                        </div>
-                    </div>
-
-                   <h1>Aturcara Majlis:</h1>
-
+                    <h1>Event Schedule:</h1>
+        
                     <div class="overflow-x-hidden">
                         <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
-                            <h1 class="font-esthetic" style="font-size: 2rem;">Akad</h1>
-                            <h2>9.00 AM - 9:30 AM: KETIBAAN TETAMU JEMPUTAN </h2>
+                            <h1 class="font-esthetic" style="font-size: 2rem;">Akad (Ceremony)</h1>
+                            <h2>9:00 AM - 9:30 AM: Arrival of Invited Guests</h2>
                         </div>
-
+        
                         <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
-                            <h1 class="font-esthetic" style="font-size: 2rem;">Resepsi</h1>
-                            <h2>10.00 AM: UPACARA IJAB & QABUL</h2>
+                            <h1 class="font-esthetic" style="font-size: 2rem;">Reception</h1>
+                            <h2>10:00 AM: Marriage Solemnization Ceremony (Ijab & Qabul)</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
 
         <!-- Galeri Foto -->
         <section class="white-section" id="galeri">
@@ -463,7 +462,7 @@
         <div class="container">
             <div class="text-center"><br>
                 <div class="col-md-12 text-center">
-                    <img src="images/adwa/logo.svg" width="150" height="150"><br>
+                    <img src="images/ico/diam.png" width="100" height="100"><br>
                     &copy; 2023 Developed by Adwa Najmi
 
                 </div>
@@ -476,20 +475,19 @@
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
 
             <div class="text-center">
-                <h1>YOU ARE INVITED TO OUR WEDDING</h1>
+                <h1>YOU ARE INVITED TO MY WEDDING </h1>
 
                 <div class="img-crop border border-3 border-light shadow mb-4 mx-auto">
                     <img src="images/e2.JPG" width="100" height="100">
                 </div>
 
-                <H1>Adwa Najmi & Farra Natasya</H1>
-                <div id="nama-tamu"></div>
-
-                <button type="button" class="btn btn-light shadow rounded-4 mt-4" onclick="buka()">
-                    <i class="fa-solid fa-envelope-open me-2"></i>Open
-                </button>
-
+                <H1>Adwa Najmi <br> &  <br>Farra Natasya</H1>
+                <div id="nama-tamu"></div><br>
                 
+                <button type="button" class="btn btn-light" onclick="buka()" style="background: rgba(255, 255, 255, 0.5);">
+                    <img src="images/shine.gif" alt="Open Image" style="height: 20px; width: 20px; opacity: 0.5;">
+                </button>
+              
             </div>
         </div>
     </div>
@@ -503,7 +501,7 @@
     <div class="loading-page" id="loading" style="opacity: 1;">
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
             <div class="text-center w-75">
-                <img class="img-fluid mb-3" src="./images/adwa/logo.gif" alt="icon" style="width: 3.5rem;">
+                <img class="img-fluid mb-3" src="./images/shine.gif" alt="icon" style="width: 3.5rem;">
                 <div class="progress" role="progressbar" style="height: 0.5rem;">
                     <div class="progress-bar" id="bar" style="width: 0%"></div>
                 </div>
