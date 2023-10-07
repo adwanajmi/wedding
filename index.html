@@ -83,11 +83,12 @@
     <style>
       /* Default background image for all screens */
         .background-image {
-            background-image: url('images/farra/beige.jpeg');
+            background-image: url('images/farra/background.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size: cover;
-        }
+            background-size: contain;
+            width: 100%;
+            height: 100%;        }
 
         /* Overlay background for all screen sizes */
         .background-overlay {
@@ -101,11 +102,11 @@
         }
 
         /* Adjust background size for smaller screens */
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
             .background-overlay {
-                background-size: contain; /* Adjust as needed for smaller screens */
+                background-size: contain; 
             }
-        }
+        } */
     </style>
     
 
@@ -377,7 +378,7 @@
                 <div class="progress" role="progressbar" style="height: 0.5rem;">
                     <div class="progress-bar" id="bar" style="width: 0%"></div>
                 </div>
-                <small class="mt-1" id="progress-info">Loading asset</small>
+                <small class="mt-1" id="progress-info">Loadin...</small>
             </div>
         </div>
     </div>
