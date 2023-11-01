@@ -25,13 +25,13 @@ const progressBar = (() => {
 
 	// Example: Increment progress every second
 	const intervalId = setInterval(() => {
-		progressPercentage += 10;
+		progressPercentage += 20;
 		progress();
 
 		if (progressPercentage >= 100) {
 			clearInterval(intervalId);
 		}
-	}, 1000);
+	}, 200);
 })();
 
 const audio = (() => {
@@ -817,21 +817,21 @@ const salin = (btn, msg = null, timeout = 1500) => {
 };
 
 // OK
-const timer = () => {
-	let countDownDate = new Date(
-		document
-			.getElementById("tampilan-waktu")
-			.getAttribute("data-waktu")
-			.replace(" ", "T")
+document.addEventListener("DOMContentLoaded", function () {
+	const targetDate = new Date(
+		document.getElementById("tampilan-waktu").getAttribute("data-target-date")
 	).getTime();
-	let time = null;
 
-	time = setInterval(() => {
-		let distance = countDownDate - new Date().getTime();
+	const updateCountdown = () => {
+		const now = new Date().getTime();
+		const distance = targetDate - now;
 
 		if (distance < 0) {
-			clearInterval(time);
-			time = null;
+			clearInterval(interval);
+			document.getElementById("Days").innerText = "0";
+			document.getElementById("Hours").innerText = "0";
+			document.getElementById("Minutes").innerText = "0";
+			document.getElementById("Seconds").innerText = "0";
 			return;
 		}
 
@@ -847,8 +847,12 @@ const timer = () => {
 		document.getElementById("Seconds").innerText = Math.floor(
 			(distance % (1000 * 60)) / 1000
 		);
-	}, 1000);
-};
+	};
+
+	const interval = setInterval(updateCountdown, 1000);
+
+	updateCountdown(); // Update the countdown once immediately when the page loads
+});
 
 // OK
 const animation = () => {
