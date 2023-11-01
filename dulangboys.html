@@ -48,7 +48,7 @@
 
 <style>
     .background-image {
-        background-image: url('images/adwa/friends.jpeg');
+        background-image: url('images/adwa/dulang.png');
         background-attachment: fixed;
         background-size: contain;
     }
@@ -61,25 +61,29 @@
         opacity: 1;
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 768px) {
         .background-overlay {
-            min-width: 375px;
-            min-height: 667px;
+            background-size: contain;
         }
     }
 
-    @media (min-width: 375px) and (max-width: 414px) {
-        .background-overlay {
-            min-width: 375px;
-            min-height: 812px;
-        }
+    @font-face {
+        font-family: 'Libre';
+        src: url('assets/Libre/regular.ttf') format('truetype');
+        /* Specify the path to your Lustria font file */
     }
 
-    @media (min-width: 414px) {
-        .background-overlay {
-            min-width: 414px;
-            min-height: 896px;
-        }
+    /* Apply the Lustria font to your heading element */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        font-family: 'Libre', sans-serif;
+        /* Use Lustria as the primary font, and fall back to a generic sans-serif font if it's not available */
+        /* Additional CSS styling for your headings and paragraphs, if needed */
     }
 </style>
 
