@@ -6,7 +6,9 @@ const progressBar = (() => {
 			progressPercentage.toString() + "%";
 		document.getElementById(
 			"progress-info"
-		).innerText = `Welcome boys!  [${progressPercentage.toFixed(0)}%]`;
+		).innerText = `Loading... Mohon bersabar [${progressPercentage.toFixed(
+			0
+		)}%]`;
 
 		if (progressPercentage == 100) {
 			if ("scrollRestoration" in history) {
@@ -31,7 +33,7 @@ const progressBar = (() => {
 		if (progressPercentage >= 100) {
 			clearInterval(intervalId);
 		}
-	}, 500);
+	}, 200);
 })();
 
 const audio = (() => {
