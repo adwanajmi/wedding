@@ -55,15 +55,15 @@
         background-size: contain;
     }
 
-    /* Overlay background for all screen sizes */
     .background-overlay {
-        /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/adwa/friends.webp'); */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/adwa/back.jpeg');
+        background-image: url('images/adwa/back.png');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: contain;
-        opacity: 1;
+        opacity: 5;
+        /* adjust this value to your preference */
     }
+
 
     /* Adjust background size for smaller screens */
     @media (max-width: 768px) {
@@ -564,10 +564,11 @@
                     </i>Open Invitation <i class="fa-solid fa-envelope-open me-2"></i>
                 </button> -->
 
-                <button type="button" class="btn shadow rounded-4 mt-4" style="background-color: transparent;"
-                    onclick="buka()">
-                    <img src="images/vvs.gif" width="50" height="50"><br>
-                </button>
+                <button type="button" class="btn shadow rounded-4 mt-4"
+                    style="background-color: transparent !important;" onclick="buka()">
+                    <img src="images/open.gif" width="50" height="50">
+                </button><br><br>
+                Open
 
             </div>
         </div>
