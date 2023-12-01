@@ -117,12 +117,7 @@
                     <!-- <span class="d-block" style="font-size: 0.7rem;">Galeri</span> -->
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#ucapan">
-                    <img src="images/ico/qr.png" alt="Image Description" style="height: 30px;">
-                    <!-- <span class="d-block" style="font-size: 0.7rem;">Ucapan</span> -->
-                </a>
-            </li>
+
         </ul>
     </nav>
 
@@ -141,7 +136,7 @@
 
                 <div class="py-4">
                     <div class="img-crop border border-3 border-light shadow mx-auto">
-                        <img src="./images/Card/me1.JPG" alt="bg" onclick="modalFoto(this)">
+                        <img src="./images/adwad.jpg" alt="bg" onclick="modalFoto(this)">
                     </div>
                 </div>
 
@@ -288,13 +283,10 @@
 
         <!-- Galeri Foto -->
         <section class="white-section" id="galeri">
-
             <div class="container pb-2 pt-4">
                 <div class="card-body border rounded-4 shadow p-3">
-
                     <h1 class="font-esthetic-dwa text-center py-3" data-aos="fade-down" data-aos-duration="1500"
-                        style="font-size: 2rem;">
-                        Galeri</h1>
+                        style="font-size: 2rem;">Galeri</h1>
 
                     <div id="carousel-foto-satu" data-aos="fade-up" data-aos-duration="1500" class="carousel slide"
                         data-bs-ride="carousel">
@@ -305,6 +297,8 @@
                                 aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carousel-foto-satu" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carousel-foto-satu" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
                         </div>
 
                         <div class="carousel-inner rounded-4">
@@ -344,6 +338,8 @@
                                 aria-label="Slide 2"></button>
                             <button type="button" data-bs-target="#carousel-foto-dua" data-bs-slide-to="2"
                                 aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carousel-foto-dua" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
                         </div>
 
                         <div class="carousel-inner rounded-4">
@@ -385,7 +381,7 @@
         </svg>
 
         <!-- Hadiah -->
-        <div class="container">
+        <!-- <div class="container">
             <div class="py-4">
 
                 <div class="text-center" style="color: black;">
@@ -406,7 +402,6 @@
                                 <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Bank Account 164810137091</p>
                                 <p class="card-text" style="font-size: 0.9rem;">Maybank</p>
 
-                                <!-- Ubah juga data-nomer sesuai dengan no rekening -->
                                 <button class="btn btn-light btn-sm rounded-3" data-nomer="164810137091"
                                     onclick="salin(this)" autofocus>Copy Bank Account</button>
                             </div>
@@ -418,7 +413,6 @@
                                 <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">Bank Account 7645028305</p>
                                 <p class="card-text" style="font-size: 0.9rem;">Cimb</p>
 
-                                <!-- Ubah juga data-nomer sesuai dengan no rekening -->
                                 <button class="btn btn-light btn-sm rounded-3" data-nomer="7645028305"
                                     onclick="salin(this)" autofocus>Copy
                                     Bank Account</button>
@@ -447,32 +441,16 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Ucapan -->
         <section class="m-0 p-0" id="ucapan">
             <div class="container" style="color: black;">
-
-                <!-- <div class="card-body border rounded-4 shadow p-3 text-center">
-                    <h1 style="font-size: 3rem;">RSVP</h1>
-                    <div class="mb-1" id="balasan"></div>
-                    <iframe class="embed-responsive-item"
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSfVQPfKf-0fN68b5fD2Ev1qlf8wD-Blc-MHduggxnWIHrTuxA/viewform?embedded=true"
-                        frameborder="0" marginheight="0" marginwidth="0"
-                        style="width: 100%; height: 500px;">Loading…</iframe>
-                </div> -->
-
-
                 <div class="rounded-4 mt-4 mb-2" id="daftar-ucapan" hidden></div>
             </div>
         </section>
 
-        <!-- Wave Separator -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="white" fill-opacity="1"
-                d="M0,224L34.3,234.7C68.6,245,137,267,206,266.7C274.3,267,343,245,411,234.7C480,224,549,224,617,213.3C685.7,203,754,181,823,197.3C891.4,213,960,267,1029,266.7C1097.1,267,1166,213,1234,192C1302.9,171,1371,181,1406,186.7L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
-            </path>
-        </svg>
+
     </main>
 
     <!-- Footer Undangan -->
