@@ -881,7 +881,7 @@ const animation = () => {
 				y: Math.random() * skew - 0.2,
 			},
 			colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
-			shapes: ["heart"],
+			shapes: ["diamond"],
 			gravity: randomInRange(0.5, 1),
 			scalar: randomInRange(1, 2),
 			drift: randomInRange(-0.5, 0.5),
