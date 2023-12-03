@@ -6,7 +6,7 @@ const progressBar = (() => {
 			progressPercentage.toString() + "%";
 		document.getElementById(
 			"progress-info"
-		).innerText = `Loading... Mohon bersabar [${progressPercentage.toFixed(
+		).innerText = `بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ [${progressPercentage.toFixed(
 			0
 		)}%]`;
 

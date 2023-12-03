@@ -6,7 +6,7 @@ const progressBar = (() => {
 			progressPercentage.toString() + "%";
 		document.getElementById(
 			"progress-info"
-		).innerText = `Please refresh if you cannot see the progress  [${progressPercentage.toFixed(0)}%]`;
+		).innerText = `Hey wassup gaiss[${progressPercentage.toFixed(0)}%]`;
 
 		if (progressPercentage == 100) {
 			if ("scrollRestoration" in history) {
