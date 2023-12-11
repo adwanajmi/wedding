@@ -27,13 +27,13 @@ const progressBar = (() => {
 
 	// Example: Increment progress every second
 	const intervalId = setInterval(() => {
-		progressPercentage += 20;
+		progressPercentage += 10;
 		progress();
 
 		if (progressPercentage >= 100) {
 			clearInterval(intervalId);
 		}
-	}, 200);
+	}, 400);
 })();
 
 const audio = (() => {
