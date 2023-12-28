@@ -820,9 +820,7 @@ const salin = (btn, msg = null, timeout = 1500) => {
 
 // OK
 document.addEventListener("DOMContentLoaded", function () {
-	const targetDate = new Date(
-		document.getElementById("tampilan-waktu").getAttribute("data-target-date")
-	).getTime();
+	const targetDate = new Date("2024-02-25T13:00:00").getTime(); // Set the target date and time
 
 	const updateCountdown = () => {
 		const now = new Date().getTime();
