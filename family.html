@@ -47,31 +47,35 @@
 </head>
 
 <style>
-    /* Default background image for all screens */
+    /* Default background image for larger screens */
     .background-image {
-        background-image: url('images/farra/background.jpg');
-        /* background-repeat: no-repeat; */
+        background-image: url('images/family/background.png');
+        /* Desktop background image */
+        background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: contain;
+        background-size: cover;
+        /* Adjust background size for larger screens */
     }
 
     /* Overlay background for all screen sizes */
     .background-overlay {
-        /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/farra/background.jpg'); */
-        background-image: url('images/farra/background.jpg');
+        background-image: url('images/family/purple.png');
+        /* Mobile background image */
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: contain;
+        /* Adjust background size for smaller screens */
         opacity: 1;
     }
 
     /* Adjust background size for smaller screens */
-    /* @media (max-width: 768px) {
-          .background-overlay {
-              background-size: cover;
-          }
-      } */
+    @media (min-width: 768px) {
+        .background-overlay {
+            background-size: cover;
+        }
+    }
 </style>
+
 
 <body data-email="user@example.com" data-password="12345678" data-url="https://api.ulems.my.id/"
     style="overflow-y: hidden;">
@@ -239,53 +243,76 @@
             <div class="container" id="date">
                 <div class="text-center" data-aos="fade-up" data-aos-duration="2000" style="color: black;">
 
-                    <h3 class="text-center">Bertempat di:</h3>
+                    <!-- Event Venue Section -->
+                    <section class="event-section">
+                        <h1 class="section-title">Bertempat di:</h1>
 
-                    <div class="event-col">
-                        <i class="icon-calendar"></i>
-                        <h3 class="text-center">
-                            <img src="images/ico/hotel.png" alt="Hotel Icon" width="32" height="32"> <br><br>
-                            The Gabion Garden Hall, Setapak
-                        </h3>
-                    </div>
-
-                    <hr>
-                    <h3 class="text-center">Dresscode:</h3>
-
-                    <div class=" program-item" style="margin-bottom: 20px;">
-                        <img src="images/ico/formal.png" alt="Hotel Icon" width="32" height="32" class="margin-right">
-                        <h3>Formal</h3>
-                    </div>
+                        <div class="event-col">
+                            <i class="icon-calendar"></i>
+                            <h3 class="text-center">
+                                <img src="images/ico/hotel.png" alt="Hotel Icon" width="32" height="32"> <br><br>
+                                The Gabion Garden Hall, Setapak
+                            </h3>
+                        </div>
+                    </section>
 
                     <hr>
 
-                    <a href="https://www.google.com/maps/dir//25,+Jalan+3%2F23a+Pt.2,+The+Ark,+Galeri+PV,+17,+Jalan+3%2F23a,+Taman+Danau+Kota,+53300+Kuala+Lumpur,+Wilayah+Persekutuan+Kuala+Lumpur/@3.2016662,101.7224708,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc39d91d3e1c7d:0xbd79abbf56640b6c!2m2!1d101.7224708!2d3.2016662?entry=ttu"
-                        target="_blank" class="btn btn-primary" style="margin-bottom: 10px;">Open in Google Maps
-                        <i class="fas fa-location-arrow"></i>
-                    </a>
+                    <!-- Dresscode Section -->
+                    <section class="event-section">
+                        <h3 class="section-title">Dresscode:</h3>
 
-                    <a href="https://waze.com/ul?ll=3.2016662,101.7224708&navigate=yes" target="_blank"
-                        class="btn btn-primary" style="margin-bottom: 10px;">Open in Waze
-                        <i class="fab fa-waze"></i>
-                    </a>
+                        <div class="program-item" style="margin-bottom: 20px;">
+                            <img src="images/ico/formal.png" alt="Formal Icon" width="32" height="32"
+                                class="margin-right">
+                            <h3>Formal</h3>
+                        </div>
+                    </section>
 
                     <hr>
 
-                    <h4>SEMOGA DENGAN KEHADIRAN DAN DOA RESTU PARA TETAMU AKAN MENYERIKAN MAJLIS KAMI SERTA MENDAPAT
-                        KEBERKATAN DARI ALLAH S.W.T JUA HENDAKNYA</h4>
+                    <!-- Location Links Section -->
+                    <section class="event-section">
+                        <h3 class="section-title">Location Links:</h3>
+
+                        <a href="https://www.google.com/maps/dir//25,+Jalan+3%2F23a+Pt.2,+The+Ark,+Galeri+PV,+17,+Jalan+3%2F23a,+Taman+Danau+Kota,+53300+Kuala+Lumpur,+Wilayah+Persekutuan+Kuala+Lumpur/@3.2016662,101.7224708,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31cc39d91d3e1c7d:0xbd79abbf56640b6c!2m2!1d101.7224708!2d3.2016662?entry=ttu"
+                            target="_blank" class="btn btn-primary" style="margin-bottom: 10px;">Open in Google Maps
+                            <i class="fas fa-location-arrow"></i>
+                        </a>
+
+                        <a href="https://waze.com/ul?ll=3.2016662,101.7224708&navigate=yes" target="_blank"
+                            class="btn btn-primary" style="margin-bottom: 10px;">Open in Waze
+                            <i class="fab fa-waze"></i>
+                        </a>
+                    </section>
+
                     <hr>
-                    <h4>Hubungi Kami;</h4>
 
-                    <a href="https://wa.me/60192130511" target="_blank" class="btn btn-success">
-                        <i class="fab fa-whatsapp"></i>
-                        En Rosmadi Saad
-                    </a>
+                    <!-- Wishes Section -->
+                    <section class="event-section">
+                        <h4>SEMOGA DENGAN KEHADIRAN DAN DOA RESTU PARA TETAMU AKAN MENYERIKAN MAJLIS KAMI SERTA MENDAPAT
+                            KEBERKATAN DARI ALLAH S.W.T JUA HENDAKNYA</h4>
+                    </section>
 
-                    <a href="https://wa.me/60193556920" target="_blank" class="btn btn-success">
-                        <i class="fab fa-whatsapp"></i>
-                        Puan Siti Haida
-                    </a>
+                    <hr>
+
+                    <!-- Contact Section -->
+                    <section class="event-section">
+                        <h4>Hubungi Kami;</h4>
+
+                        <a href="https://wa.me/60192130511" target="_blank" class="btn btn-success">
+                            <i class="fab fa-whatsapp"></i>
+                            En Rosmadi Saad
+                        </a>
+
+                        <a href="https://wa.me/60193556920" target="_blank" class="btn btn-success">
+                            <i class="fab fa-whatsapp"></i>
+                            Puan Siti Haida
+                        </a>
+                    </section>
+
                 </div>
+
             </div>
         </div>
 
@@ -301,19 +328,31 @@
             <div class="card" style="background-color: white; padding: 20px;">
                 <div class="container">
                     <div class="text-center" style="color: black;">
-
                         <h1>Aturcara Majlis:</h1>
 
                         <div class="overflow-x-hidden">
-                            <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
-                                <h2>9.00AM - 9:30AM: KETIBAAN TETAMU JEMPUTAN </h2>
+                            <div class="event-item py-2" data-aos="fade-left" data-aos-duration="1500">
+                                <div class="event-time">11:00 AM - 11:30 AM</div>
+                                <div class="event-description">KETIBAAN TETAMU JEMPUTAN</div>
                             </div>
 
-                            <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
-                                <h2>10.00AM - 2.00PM: UPACARA IJAB & QABUL</h2>
+                            <div class="event-item py-2" data-aos="fade-right" data-aos-duration="1500">
+                                <div class="event-time">1:00 PM - 1:30 PM</div>
+                                <div class="event-description">KETIBAAN PENGANTIN</div>
+                            </div>
+
+                            <div class="event-item py-2" data-aos="fade-left" data-aos-duration="1500">
+                                <div class="event-time">2:00 PM - 2:30 PM</div>
+                                <div class="event-description">MAKAN BERADAB</div>
+                            </div>
+
+                            <div class="event-item py-2" data-aos="fade-right" data-aos-duration="1500">
+                                <div class="event-time">4:00 PM</div>
+                                <div class="event-description">MAJLIS BERAKHIR</div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -332,7 +371,7 @@
             <div class="container" style="color: black;">
 
                 <div class="card-body border rounded-4 shadow p-3">
-                    <h1 class="font-esthetic-dwa text-center mb-3" style="font-size: 3rem;">RSVP</h1>
+                    <h1 class="text-center mb-3" style="font-size: 3rem;">RSVP</h1>
                     <div class="mb-1" id="balasan"></div>
                     <iframe class="embed-responsive-item" src="https://forms.gle/LcidXi8a7ca2tnM86" frameborder="0"
                         marginheight="0" marginwidth="0" style="width: 100%; height: 500px;">Loading…</iframe>
