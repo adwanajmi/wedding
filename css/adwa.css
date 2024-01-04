@@ -88,7 +88,7 @@ body::-webkit-scrollbar {
 	width: 0.25rem;
 	height: 0.625rem;
 	border-radius: 25%;
-	background-color: black;
+	background-color: white;
 	animation-name: scroll;
 	animation-duration: 2.5s;
 	animation-timing-function: linear;
@@ -96,7 +96,7 @@ body::-webkit-scrollbar {
 }
 
 .dark-section {
-	background-color: black !important;
+	background-color: white !important;
 	margin-top: -5px;
 	margin-bottom: -5px;
 }
