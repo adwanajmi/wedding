@@ -33,7 +33,7 @@ const progressBar = (() => {
 		if (progressPercentage >= 100) {
 			clearInterval(intervalId);
 		}
-	}, 4);
+	}, 1000);
 })();
 
 const audio = (() => {
