@@ -1109,7 +1109,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				// Update the text after submitting the form
 				if (afterSubmitText) {
 					afterSubmitText.innerHTML =
-						"<p class='text-center'>Terima Kasih !</p>";
+						"<p class='text-center'>Terima Kasih !</p>" +
+						"<p class='text-center'>SEMOGA DENGAN KEHADIRAN DAN DOA RESTU PARA TETAMU AKAN MENYERIKAN MAJLIS KAMI SERTA MENDAPAT KEBERKATAN DARI ALLAH S.W.T JUA HENDAKNYA</p>";
 				}
 			} else {
 				// Handle error cases if needed
