@@ -910,8 +910,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		});
 		animation();
 
-		await login();
-		timer();
+		// await login();
+		// timer();
 	};
 });
 
