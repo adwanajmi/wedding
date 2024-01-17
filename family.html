@@ -50,14 +50,13 @@
     /* Default background image for larger screens */
     .background-image {
         /* background-image: url('images/family/purple.png'); */
-        background: url('images/family/purple.png') center center;
-
+        background: white center center;
+        min-height: 750px;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         position: relative;
-        /* Optional: Adjust the background position */
     }
 
 
@@ -133,8 +132,8 @@
     </section>
 
     <!-- Main Content -->
-    <main class="text-light hero" data-bs-spy="scroll" data-bs-target="#navbar-menus" data-bs-root-margin="0px 0px -40%"
-        data-bs-smooth-scroll="true" tabindex="0">
+    <main class="text-light background-image" data-bs-spy="scroll" data-bs-target="#navbar-menus"
+        data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
 
         <!-- Home -->
         <section class="container" id="home">
@@ -154,7 +153,7 @@
                 <h1 class="font-esthetic-dwa">Adwa Najmi <br> & <br> Farra Natasya</h1><br>
 
 
-                <h4>Ahad, 25 Februari 2023</h4>
+                <h3>Ahad, 25 Februari 2023</h3>
 
                 <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
                     <!-- Change the data-target-date attribute to the target date and time -->
@@ -207,41 +206,43 @@
         <!-- Mempelai -->
         <section class="white-section" id="couple">
 
-            <div class="text-center" style="color: black;">
-                <h1>Assalamualaikum <br> Warahmatullahi Wabarakatuh</h1><br>
+            <div class="countdown-container">
+                <div class="text-center" style="color: black;">
+                    <h1>Assalamualaikum <br> Warahmatullahi Wabarakatuh</h1><br>
 
-                <p class="pb-3 px-3">
-                    <b>EN ROSMADI SAAD</b><br>
+                    <p class="pb-3 px-3">
+                        <b>EN ROSMADI SAAD</b><br>
 
-                    & <br>
+                        & <br>
 
-                    <b>PUAN SITI HAIDA</b> <br><br>
+                        <b>PUAN SITI HAIDA</b> <br><br>
 
-                    DENGAN PENUH KESYUKURAN KEHADRAT ILAHI, KAMI BERBESAR HATI DAN SUKACITA MENJEMPUT <br><br>
+                        DENGAN PENUH KESYUKURAN KEHADRAT ILAHI, KAMI BERBESAR HATI DAN SUKACITA MENJEMPUT <br><br>
 
-                    DATO/DATIN/TUAN/PUAN/ENCIK/CIK
+                        DATO/DATIN/TUAN/PUAN/ENCIK/CIK
 
-                    KE MAJLIS IJAB & QABUL PUTERA KAMI YANG KAMI KASIHI
-                </p>
+                        KE MAJLIS IJAB & QABUL PUTERA KAMI YANG KAMI KASIHI
+                    </p>
 
-                <div class="overflow-x-hidden">
-                    <div data-aos="fade-left" data-aos-duration="2000">
-                        <!-- <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
+                    <div class="overflow-x-hidden">
+                        <div data-aos="fade-left" data-aos-duration="2000">
+                            <!-- <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
                             <img src="./assets/images/cewe.png" alt="cewe" onclick="modalFoto(this)">
                         </div> -->
-                        <h1>
-                            Muhammad Adwa' Najmi bin Rosmadi</h1>
+                            <h1>
+                                Muhammad Adwa' Najmi bin Rosmadi</h1>
 
-                    </div>
+                        </div>
 
-                    <div data-aos="fade-right" data-aos-duration="2000">
-                        <!-- <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
+                        <div data-aos="fade-right" data-aos-duration="2000">
+                            <!-- <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
                             <img src="./assets/images/cowo.png" alt="cowo" onclick="modalFoto(this)">
                         </div> -->
-                        <h1>
-                            & <br>
-                            Farra Natasya binti Ahmad Husairi</h1>
+                            <h1>
+                                & <br>
+                                Farra Natasya binti Ahmad Husairi</h1>
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -342,7 +343,7 @@
         <!-- Tanggal -->
         <section class="white-section" id="galeri">
             <div class="card" style="background-color: white; padding: 20px;">
-                <div class="container">
+                <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
                     <div class="text-center" style="color: black;">
                         <h1>Aturcara Majlis:</h1>
 
@@ -386,13 +387,97 @@
         <section class="m-0 p-0" id="ucapan">
             <div class="container" style="color: black;">
 
-                <div class="card-body border rounded-4 shadow p-3">
-                    <h1 class="text-center mb-3" style="font-size: 3rem;">RSVP</h1>
-                    <div class="mb-1" id="balasan"></div>
-                    <iframe class="embed-responsive-item" src="https://forms.gle/LcidXi8a7ca2tnM86" frameborder="0"
-                        marginheight="0" marginwidth="0" style="width: 100%; height: 500px;">Loading…</iframe>
+                <div class="countdown-container">
+                    <h3 class="text-center">RSVP</h3>
+                    <!-- Add this div to your HTML markup -->
+                    <div id="after-submit-text" class="text-center">
+                        <p class="text-center">Sila sahkan kehadiran anda sebelum 15 Februari 2024</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <form class="rsvp-form"
+                                action="https://script.google.com/macros/s/AKfycbwZHqbGbCTyoZ7TaUoP5IREERGrAQLwgqc2gA20xdx_BA8xeAmSg7w9dQUtMrvOMUKCzg/exec"
+                                method="POST">
+
+                                <div class="formbold-mb-5">
+                                    <label for="nama" class="formbold-form-label"> Nama </label>
+                                    <input type="text" name="nama" id="nama" placeholder="Nama"
+                                        class="formbold-form-input" required />
+                                </div>
+
+                                <div class="formbold-mb-5">
+                                    <label for="noTelefon" class="formbold-form-label"> Nombor Telefon </label>
+                                    <input type="tel" name="noTelefon" id="noTelefon" placeholder="No Telefon"
+                                        class="formbold-form-input" pattern="[0-9]{10,11}"
+                                        title="Sila masukkan 10 atau 11 digit nombor yang sah" required />
+                                </div>
+
+                                <div class="formbold-mb-5">
+                                    <label for="hadir" class="formbold-form-label"> Hadir </label>
+                                    <div class="flex">
+                                        <input type="radio" name="hadir" id="radioButtonYes" value="Yes"
+                                            class="formbold-radio" required />
+                                        <label for="radioButtonYes" class="formbold-radio-label"> Ya </label>
+                                    </div>
+                                    <div class="flex">
+                                        <input type="radio" name="hadir" id="radioButtonNo" value="No"
+                                            class="formbold-radio" required />
+                                        <label for="radioButtonNo" class="formbold-radio-label"> Tidak </label>
+                                    </div>
+                                </div>
+
+                                <div id="jumlahKehadiranContainer" style="display: none;">
+
+                                    <div class="formbold-mb-5">
+                                        <label for="waktu" class="formbold-form-label"> Waktu </label>
+                                        <select name="waktu" id="waktu" class="formbold-form-input">
+                                            <option value="" disabled selected>Sila Pilih</option>
+                                            <option value="1">Sesi Pagi : 11AM-1PM</option>
+                                            <option value="2">Sesi Tengahari : 12PM-3PM</option>
+                                            <option value="3">Sesi Petang : 2PM-4PM</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="formbold-mb-5">
+                                        <label for="jumlahKehadiran" class="formbold-form-label"> Jumlah Kehadiran
+                                        </label>
+                                        <select name="jumlahKehadiran" id="jumlahKehadiran" class="formbold-form-input">
+                                            <option value="" disabled selected>Sila Pilih</option>
+                                            <option value="1">1 Orang</option>
+                                            <option value="2">2 Orang</option>
+                                            <option value="3">3 Orang</option>
+                                            <option value="4">4 Orang</option>
+                                            <option value="5">5 Orang</option>
+                                            <option value="6">6 Orang</option>
+                                            <option value="7">7 Orang</option>
+                                            <option value="8">8 Orang</option>
+                                            <option value="9">9 Orang</option>
+                                            <option value="10">10 Orang</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="formbold-mb-5">
+                                    <label for="ucapan" class="formbold-form-label"> Ucapan </label>
+                                    <textarea name="ucapan" id="ucapan" placeholder="Jika Ada"
+                                        class="formbold-form-input"></textarea>
+                                </div>
+
+                                <div id="submit-container" class="text-center">
+                                    <div id="loading-container" style="display:none;">
+                                        <button class="formbold-btn" disabled>
+                                            <span class="spinner"></span> Loading...
+                                        </button>
+                                    </div>
+                                    <button class="formbold-btn" id="hantar-button">Hantar</button>
+                                </div>
 
 
+
+                            </form>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -491,6 +576,8 @@
 
     <!-- Custom JS -->
     <script src="./js/fam.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </body>
 
 </html>
