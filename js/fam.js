@@ -1188,3 +1188,45 @@ document.addEventListener("DOMContentLoaded", function () {
 	updateJumlahKehadiranVisibility();
 	updateWaktuVisibility(); // Add this line
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	const sheetdbUrl = "https://sheetdb.io/api/v1/i1i64310qb8s6";
+	const recordsPerPage = 5;
+	let currentPage = 1;
+
+	function fetchSheetData(page) {
+		fetch(
+			`${sheetdbUrl}?limit=${recordsPerPage}&page=${page}&sort=Timestamp,desc`
+		)
+			.then((response) => response.json())
+			.then((data) => {
+				const container = document.getElementById("sheetdb-content");
+
+				// Clear existing content if any
+				container.innerHTML = "";
+
+				data.forEach((record) => {
+					const recordDiv = document.createElement("div");
+					recordDiv.innerHTML = `
+                            <p style="margin-bottom: 10px;"><strong>${record.Name}</strong></p>
+                            <p>${record.Greetings}</p>
+                            <p>${record.Timestamp}</p>
+                            <hr>
+                        `;
+					container.appendChild(recordDiv);
+				});
+			})
+			.catch((error) => console.error("Error fetching data:", error));
+	}
+
+	function loadMore() {
+		currentPage++;
+		fetchSheetData(currentPage);
+	}
+
+	// Initial load
+	fetchSheetData(currentPage);
+
+	// Attach event listener to load more button
+	document.getElementById("load-more-btn").addEventListener("click", loadMore);
+});
