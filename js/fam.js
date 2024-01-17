@@ -33,7 +33,7 @@ const progressBar = (() => {
 		if (progressPercentage >= 100) {
 			clearInterval(intervalId);
 		}
-	}, 600);
+	}, 4);
 })();
 
 const audio = (() => {
@@ -1189,44 +1189,49 @@ document.addEventListener("DOMContentLoaded", function () {
 	updateWaktuVisibility(); // Add this line
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-	const sheetdbUrl = "https://sheetdb.io/api/v1/i1i64310qb8s6";
-	const recordsPerPage = 5;
-	let currentPage = 1;
+$(document).ready(function () {
+	var sheetUrl = $("#data-container").data("sheetdb-url");
+	var searchMode = $("#data-container").data("sheetdb-search-mode");
+	var page = 1;
+	var pageSize = 10; // Adjust the number of items per page as needed
 
-	function fetchSheetData(page) {
-		fetch(
-			`${sheetdbUrl}?limit=${recordsPerPage}&page=${page}&sort=Timestamp,desc`
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				const container = document.getElementById("sheetdb-content");
+	function fetchData() {
+		var url = sheetUrl + `?limit=${pageSize}&offset=${(page - 1) * pageSize}`;
+		if (searchMode) {
+			url += `&searchMode=${searchMode}`;
+		}
 
-				// Clear existing content if any
-				container.innerHTML = "";
-
-				data.forEach((record) => {
-					const recordDiv = document.createElement("div");
-					recordDiv.innerHTML = `
-                            <p style="margin-bottom: 10px;"><strong>${record.Name}</strong></p>
-                            <p>${record.Greetings}</p>
-                            <p>${record.Timestamp}</p>
-                            <hr>
-                        `;
-					container.appendChild(recordDiv);
-				});
-			})
-			.catch((error) => console.error("Error fetching data:", error));
+		$.ajax({
+			url: url,
+			method: "GET",
+			success: function (data) {
+				if (data && data.length > 0) {
+					renderData(data);
+					page++;
+				} else {
+					$("#load-more-btn").hide();
+				}
+			},
+			error: function () {
+				console.error("Failed to fetch data from SheetDB");
+			},
+		});
 	}
 
-	function loadMore() {
-		currentPage++;
-		fetchSheetData(currentPage);
+	function renderData(data) {
+		var container = $("#data-container");
+		data.forEach(function (item) {
+			var html = `<span class="badge bg-success text-light">${item.Name}</span>, 
+                        <span class="badge bg-primary text-light">${item.Timestamp}</span>
+                        <p style="color: black;">${item.Greetings}</p>`;
+			container.append(html);
+		});
 	}
 
-	// Initial load
-	fetchSheetData(currentPage);
+	$("#load-more-btn").on("click", function () {
+		fetchData();
+	});
 
-	// Attach event listener to load more button
-	document.getElementById("load-more-btn").addEventListener("click", loadMore);
+	// Initial data fetch
+	fetchData();
 });
