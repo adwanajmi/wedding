@@ -33,7 +33,7 @@ const progressBar = (() => {
 		if (progressPercentage >= 100) {
 			clearInterval(intervalId);
 		}
-	}, 1000);
+	}, 1);
 })();
 
 const audio = (() => {
@@ -1189,49 +1189,53 @@ document.addEventListener("DOMContentLoaded", function () {
 	updateWaktuVisibility(); // Add this line
 });
 
-$(document).ready(function () {
-	var sheetUrl = $("#data-container").data("sheetdb-url");
-	var searchMode = $("#data-container").data("sheetdb-search-mode");
-	var page = 1;
-	var pageSize = 10; // Adjust the number of items per page as needed
+//ucapan
+const externalDataList = document.getElementById("externalDataList");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
+let startIndex = 0;
+const itemsPerPage = 5;
 
-	function fetchData() {
-		var url = sheetUrl + `?limit=${pageSize}&offset=${(page - 1) * pageSize}`;
-		if (searchMode) {
-			url += `&searchMode=${searchMode}`;
-		}
+function loadMoreItems() {
+	fetch(
+		`https://api.apispreadsheets.com/data/9gldidVDZCDIuF3v/?start=${startIndex}&limit=${itemsPerPage}`
+	)
+		.then((res) => {
+			if (res.status === 200) {
+				res.json().then((response) => {
+					const data = response.data;
 
-		$.ajax({
-			url: url,
-			method: "GET",
-			success: function (data) {
-				if (data && data.length > 0) {
-					renderData(data);
-					page++;
-				} else {
-					$("#load-more-btn").hide();
-				}
-			},
-			error: function () {
-				console.error("Failed to fetch data from SheetDB");
-			},
-		});
-	}
+					// Iterate through the data and append "Name" and "Timestamp" with badges to the list
+					data.forEach((item) => {
+						var listItem = document.createElement("li");
+						listItem.className = "list-group-item";
 
-	function renderData(data) {
-		var container = $("#data-container");
-		data.forEach(function (item) {
-			var html = `<span class="badge bg-success text-light">${item.Name}</span>, 
-                        <span class="badge bg-primary text-light">${item.Timestamp}</span>
-                        <p style="color: black;">${item.Greetings}</p>`;
-			container.append(html);
-		});
-	}
+						var nameBadge = document.createElement("span");
+						nameBadge.className = "badge bg-success";
+						nameBadge.textContent = item.Name;
 
-	$("#load-more-btn").on("click", function () {
-		fetchData();
-	});
+						var greetingsText = document.createElement("p");
+						greetingsText.textContent = item.Greetings;
 
-	// Initial data fetch
-	fetchData();
-});
+						// Append badges and greetings to the list item
+						listItem.appendChild(nameBadge);
+						listItem.appendChild(greetingsText);
+
+						// Append the list item to the list
+						externalDataList.appendChild(listItem);
+					});
+
+					// Update the starting index for the next batch of items
+					startIndex += data.length;
+				});
+			} else {
+				console.log("Error fetching data from external API");
+			}
+		})
+		.catch((err) => console.log(err));
+}
+
+// Initial load
+loadMoreItems();
+
+// Event listener for the "Load More" button
+loadMoreBtn.addEventListener("click", loadMoreItems);
