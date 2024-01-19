@@ -45,6 +45,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/adwa.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 
 <style>
@@ -633,14 +635,14 @@
 
         <p><br></p>
 
-        <section class="container">
-            <div class="countdown-container text-center">
+        <div class="countdown-container text-center" style="color: black;">
 
-                <div id="data-container" data-sheetdb-url="https://sheetdb.io/api/v1/i1i64310qb8s6">
-                </div>
-                <button id="load-more-btn">Load More</button>
-            </div>
-        </section>
+            <h2>Ucapan</h2>
+            <ul id="externalDataList" class="list-group"></ul><br>
+            <button id="loadMoreBtn" class="btn btn-primary">Load More</button>
+
+
+        </div>
 
         <!-- Wave Separator -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -675,7 +677,7 @@
                 <h3>Walimatul Urus</h3>
 
                 <div class="img-crop border border-3 border-light shadow mb-4 mx-auto">
-                    <img src="images/e1.JPG" width="100" height="100">
+                    <img src="images/adwa/cake.jpg" width="100" height="100" onerror="imageError()">
                 </div>
 
                 <!-- <H1>Adwa Najmi <br> &  <br>Farra Natasya</H1> -->
@@ -745,6 +747,11 @@
 
     <!-- Custom JS -->
     <script src="./js/adwa.js"></script>
+
+    <!-- Bootstrap JS from CDN -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
