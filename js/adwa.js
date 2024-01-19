@@ -1077,21 +1077,43 @@ function downloadQRImage(button) {
 
 //ucapan
 const externalDataList = document.getElementById("externalDataList");
-const loadMoreBtn = document.getElementById("loadMoreBtn");
-let startIndex = 0;
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
+const loadingOverlay = document.getElementById("loadingOverlay");
+const paginationButtons = document.getElementById("paginationButtons");
+let currentIndex = 0;
 const itemsPerPage = 5;
 
-function loadMoreItems() {
-	fetch(
-		`https://api.apispreadsheets.com/data/9gldidVDZCDIuF3v/?start=${startIndex}&limit=${itemsPerPage}`
-	)
+function showLoadingOverlay() {
+	loadingOverlay.style.display = "block";
+	paginationButtons.style.pointerEvents = "none"; // Disable buttons during loading
+}
+
+function hideLoadingOverlay() {
+	loadingOverlay.style.display = "none";
+	paginationButtons.style.pointerEvents = "auto"; // Enable buttons after loading
+}
+
+function loadItems(startIndex) {
+	showLoadingOverlay();
+
+	fetch(`https://api.apispreadsheets.com/data/9gldidVDZCDIuF3v/`)
 		.then((res) => {
 			if (res.status === 200) {
 				res.json().then((response) => {
 					const data = response.data;
 
-					// Iterate through the data and append "Name" and "Timestamp" with badges to the list
-					data.forEach((item) => {
+					// Clear existing items
+					externalDataList.innerHTML = "";
+
+					// Display 5 items starting from the given index
+					for (
+						let i = startIndex;
+						i < startIndex + itemsPerPage && i < data.length;
+						i++
+					) {
+						const item = data[i];
+
 						var listItem = document.createElement("li");
 						listItem.className = "list-group-item";
 
@@ -1108,17 +1130,55 @@ function loadMoreItems() {
 
 						// Append the list item to the list
 						externalDataList.appendChild(listItem);
-					});
+					}
 
-					// Update the starting index for the next batch of items
-					startIndex += data.length;
+					// Enable/disable pagination buttons based on the current index
+					prevButton.disabled = currentIndex === 0;
+					nextButton.disabled = currentIndex + itemsPerPage >= data.length;
+
+					hideLoadingOverlay();
 				});
 			} else {
 				console.log("Error fetching data from external API");
+				hideLoadingOverlay();
 			}
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => {
+			console.log(err);
+			hideLoadingOverlay();
+		});
 }
+
+function handlePrevButtonClick() {
+	currentIndex -= itemsPerPage;
+	loadItems(currentIndex);
+}
+
+function handleNextButtonClick() {
+	currentIndex += itemsPerPage;
+	loadItems(currentIndex);
+}
+
+// Initial load
+loadItems(currentIndex);
+
+// Add event listeners for the pagination buttons
+prevButton.addEventListener("click", handlePrevButtonClick);
+nextButton.addEventListener("click", handleNextButtonClick);
+
+function handleNextButtonClick() {
+	currentIndex += itemsPerPage;
+	loadItems(currentIndex);
+}
+
+// Initial load
+loadItems(currentIndex);
+
+// Add event listener for the Next button
+nextButton.addEventListener("click", handleNextButtonClick);
+
+// Start loading all items
+loadAllItems();
 
 // Initial load
 loadMoreItems();
