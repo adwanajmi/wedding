@@ -97,7 +97,7 @@ body::-webkit-scrollbar {
 }
 
 footer {
-	background-color: #ffdbac !important;
+	background-color: gray !important;
 	margin-top: -5px;
 	padding-bottom: 4rem;
 }
