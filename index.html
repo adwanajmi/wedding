@@ -135,14 +135,16 @@
             </div>
             <p><br></p>
             <p><br></p>
+            <p><br></p>
+            <p><br></p>
             <div class="row">
                 <div class="text-center">
                     <h3 style=" color: black;">Ahad, 17 Februari 2024</h3>
 
                     <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
                         <!-- Change the data-target-date attribute to the target date and time -->
-                        <div class="row justify-content-center" id="tampilan-waktu"
-                            data-target-date="2024-02-25T13:00:00">
+                        <div class="row justify-content-center" id="tampilan-waktu-farra"
+                            data-target-date="2024-02-17T11:00:00">
                             <div class="col-3 p-1">
                                 <h2 class="d-inline m-0 p-0 text-black" id="Days">0</h2><small
                                     class="ms-1 me-0 my-0 p-0 d-inline text-black">Hari</small>
@@ -161,6 +163,7 @@
                             </div>
                         </div>
                     </div>
+
 
                     <p><br><br></p>
 
@@ -398,8 +401,8 @@
                         <p class="text-center">Sila sahkan kehadiran anda sebelum... </p>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
+                    <div class="formbold-main-wrapper">
+                        <div class="formbold-form-wrapper">
                             <form class="rsvp-form"
                                 action="https://script.google.com/macros/s/AKfycbwhq5ldN2Av5DeHfJwC0gf2rZ9rclQCi8HQfwstIXptb4NdVhtpuFHgWwhkR1DsC2ud/exec"
                                 method="POST">
@@ -478,21 +481,18 @@
                                     <button class="formbold-btn" id="hantar-button">Hantar</button>
                                 </div>
 
-
-
                             </form>
                         </div>
                     </div>
+
+
+                    <div class="rounded-4 mt-4 mb-2" id="daftar-ucapan" hidden></div>
                 </div>
-
-
-                <div class="rounded-4 mt-4 mb-2" id="daftar-ucapan" hidden></div>
-            </div>
         </section>
 
         <div class="text-center">
 
-            <img src="images/farra/logo.svg" width="80" height="80">
+            <img src="images/adwa/logo.png" width="80" height="80">
 
         </div>
     </main>
@@ -528,7 +528,7 @@
 
     <!-- Audio Button -->
     <button type="button" id="tombol-musik" style="display: none;" class="btn btn-light btn-sm rounded-circle btn-music"
-        onclick="play(this)" data-status="true" data-url="./assets/music/farrasong.mp3">
+        onclick="play(this)" data-status="true" data-url="music/sopan.mp3">
         <i class="fa-solid fa-circle-pause"></i>
     </button>
 
