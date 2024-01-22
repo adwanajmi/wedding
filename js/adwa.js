@@ -893,24 +893,59 @@ const animation = () => {
 
 // OK
 document.addEventListener("DOMContentLoaded", (event) => {
-	window.buka = async function () {
-		document.getElementById("daftar-ucapan").innerHTML = comment.renderLoading(
-			pagination.getPer()
-		);
-		document.querySelector("body").style.overflowY = "scroll";
+    // Define an array of song URLs
+    const songs = [
+        "music/famsong1.mp3",
+        "music/famsong2.mp3",
+        // Add more songs as needed
+    ];
 
-		opacity("welcome");
-		document.getElementById("tombol-musik").style.display = "block";
-		AOS.init();
-		audio.play();
+    window.buka = async function () {
+        document.getElementById("daftar-ucapan").innerHTML = comment.renderLoading(
+            pagination.getPer()
+        );
+        document.querySelector("body").style.overflowY = "scroll";
 
-		await confetti({
-			origin: { y: 0.8 },
-			zIndex: 1057,
-		});
-		animation();
-	};
+        opacity("welcome");
+        document.getElementById("tombol-musik").style.display = "block";
+        AOS.init();
+
+        // Shuffle the array of song URLs
+        const shuffledSongs = shuffleArray(songs);
+
+        // Set the first shuffled song URL as the initial data-url attribute
+        document.getElementById("tombol-musik").setAttribute("data-url", shuffledSongs[0]);
+
+        audio.src = shuffledSongs[0]; // Set the source of your audio element
+        audio.play();
+
+        await confetti({
+            origin: { y: 0.8 },
+            zIndex: 1057,
+        });
+        animation();
+    };
+
+    // Function to shuffle an array (Fisher-Yates algorithm)
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
 });
+
+function play(button) {
+    const audio = new Audio();
+    const url = button.getAttribute("data-url");
+
+    if (url) {
+        audio.src = url;
+        audio.play();
+    }
+}
+
 
 // OK
 const play = (btn) => {
