@@ -6,7 +6,7 @@ const progressBar = (() => {
 			progressPercentage.toString() + "%";
 		document.getElementById(
 			"progress-info"
-		).innerText = `Loading... Please wait.. [${progressPercentage.toFixed(
+		).innerText = `بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ [${progressPercentage.toFixed(
 			0
 		)}%]`;
 
@@ -33,7 +33,7 @@ const progressBar = (() => {
 		if (progressPercentage >= 100) {
 			clearInterval(intervalId);
 		}
-	}, 1);
+	}, 1000);
 })();
 
 const audio = (() => {
@@ -803,7 +803,7 @@ const salin = (btn, msg = null, timeout = 1500) => {
 	navigator.clipboard.writeText(btn.getAttribute("data-nomer"));
 
 	let tmp = btn.innerHTML;
-	btn.innerHTML = msg ?? "Tersalin";
+	btn.innerHTML = msg ?? "Copied";
 	btn.disabled = true;
 	let id = null;
 
@@ -820,9 +820,7 @@ const salin = (btn, msg = null, timeout = 1500) => {
 
 // OK
 document.addEventListener("DOMContentLoaded", function () {
-	const targetDate = new Date(
-		document.getElementById("tampilan-waktu").getAttribute("data-target-date")
-	).getTime();
+	const targetDate = new Date("2024-02-25T13:00:00").getTime(); // Set the target date and time
 
 	const updateCountdown = () => {
 		const now = new Date().getTime();
@@ -881,7 +879,7 @@ const animation = () => {
 				y: Math.random() * skew - 0.2,
 			},
 			colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
-			shapes: ["heart"],
+			shapes: ["diamond"],
 			gravity: randomInRange(0.5, 1),
 			scalar: randomInRange(1, 2),
 			drift: randomInRange(-0.5, 0.5),
@@ -894,26 +892,28 @@ const animation = () => {
 };
 
 // OK
-const buka = async () => {
-	document.getElementById("daftar-ucapan").innerHTML = comment.renderLoading(
-		pagination.getPer()
-	);
-	document.querySelector("body").style.overflowY = "scroll";
+document.addEventListener("DOMContentLoaded", (event) => {
+	window.buka = async function () {
+		document.getElementById("daftar-ucapan").innerHTML = comment.renderLoading(
+			pagination.getPer()
+		);
+		document.querySelector("body").style.overflowY = "scroll";
 
-	opacity("welcome");
-	document.getElementById("tombol-musik").style.display = "block";
-	AOS.init();
-	audio.play();
+		opacity("welcome");
+		document.getElementById("tombol-musik").style.display = "block";
+		AOS.init();
+		audio.play();
 
-	await confetti({
-		origin: { y: 0.8 },
-		zIndex: 1057,
-	});
-	animation();
+		await confetti({
+			origin: { y: 0.8 },
+			zIndex: 1057,
+		});
+		animation();
 
-	// await login();
-	// timer();
-};
+		// await login();
+		// timer();
+	};
+});
 
 // OK
 const play = (btn) => {
@@ -1033,6 +1033,139 @@ const opacity = (nama) => {
 	}, 10);
 };
 
+function downloadQRImage(button) {
+	const imageSrc = button.parentElement.querySelector("img").src;
+
+	// Create a temporary anchor element to trigger the download
+	const downloadLink = document.createElement("a");
+	downloadLink.href = imageSrc;
+	downloadLink.download = "qr.png"; // Set the desired file name here
+	downloadLink.style.display = "none";
+
+	// Append the anchor element to the document
+	document.body.appendChild(downloadLink);
+
+	// Trigger the click event on the anchor element
+	downloadLink.click();
+
+	// Clean up by removing the anchor element
+	document.body.removeChild(downloadLink);
+}
+
+//loading page after submit button is clicked
+document.addEventListener("DOMContentLoaded", function () {
+	const form = document.querySelector(".rsvp-form");
+	const loadingContainer = document.getElementById("loading-container");
+	const hantarButton = document.getElementById("hantar-button");
+	const afterSubmitText = document.getElementById("after-submit-text"); // Add this line
+
+	form.addEventListener("submit", async function (event) {
+		event.preventDefault();
+
+		// Show loading container
+		loadingContainer.style.display = "block";
+		// Hide submit button
+		hantarButton.style.display = "none";
+
+		// Fetch form data
+		const formData = new FormData(form);
+
+		try {
+			// Send form data to the server using fetch
+			const response = await fetch(form.action, {
+				method: form.method,
+				body: formData,
+			});
+
+			if (response.ok) {
+				// If the response is successful, hide the entire form
+				form.style.display = "none";
+				// Show the modal
+				$("#rsvp-modal").modal("show");
+
+				// Update the text after submitting the form
+				if (afterSubmitText) {
+					afterSubmitText.innerHTML =
+						"<p class='text-center'>Terima Kasih !</p>" +
+						"<p class='text-center'>SEMOGA DENGAN KEHADIRAN DAN DOA RESTU PARA TETAMU AKAN MENYERIKAN MAJLIS KAMI SERTA MENDAPAT KEBERKATAN DARI ALLAH S.W.T JUA HENDAKNYA</p>";
+				}
+			} else {
+				// Handle error cases if needed
+				console.error("Error submitting the form:", response.statusText);
+				// Revert to the original form state
+				loadingContainer.style.display = "none";
+				hantarButton.style.display = "block";
+
+				// Update the text to an error message if needed
+				if (afterSubmitText) {
+					afterSubmitText.innerHTML =
+						"<p class='text-center'>Submission failed. Please try again.</p>";
+				}
+			}
+		} catch (error) {
+			// Handle network errors
+			console.error("Network error:", error.message);
+			// Revert to the original form state
+			loadingContainer.style.display = "none";
+			hantarButton.style.display = "block";
+
+			// Update the text to a network error message if needed
+			if (afterSubmitText) {
+				afterSubmitText.innerHTML =
+					"<p class='text-center'>Network error. Please check your internet connection and try again.</p>";
+			}
+		}
+	});
+});
+
+// Jumlah Kehadiran
+document.addEventListener("DOMContentLoaded", function () {
+	const hadirRadioYes = document.getElementById("radioButtonYes");
+	const hadirRadioNo = document.getElementById("radioButtonNo");
+	const jumlahKehadiranContainer = document.getElementById(
+		"jumlahKehadiranContainer"
+	);
+
+	const waktuDropdown = document.getElementById("waktuContainer"); // Check the ID here
+
+	function updateWaktuVisibility() {
+		// Check if the element exists before trying to manipulate its style
+		if (waktuDropdown) {
+			waktuDropdown.style.display = hadirRadioYes.checked ? "block" : "none";
+		}
+	}
+
+	// ...
+
+	// Initial check on page load
+	updateWaktuVisibility();
+
+	function updateJumlahKehadiranVisibility() {
+		jumlahKehadiranContainer.style.display = hadirRadioYes.checked
+			? "block"
+			: "none";
+	}
+
+	// function updateWaktuVisibility() {
+	// 	// Add this function
+	// 	waktuDropdown.style.display = hadirRadioYes.checked ? "block" : "none";
+	// }
+
+	hadirRadioYes.addEventListener("change", function () {
+		updateJumlahKehadiranVisibility();
+		updateWaktuVisibility(); // Add this line
+	});
+
+	hadirRadioNo.addEventListener("change", function () {
+		updateJumlahKehadiranVisibility();
+		updateWaktuVisibility(); // Add this line
+	});
+
+	// Initial check on page load
+	updateJumlahKehadiranVisibility();
+	updateWaktuVisibility(); // Add this line
+});
+
 //ucapan
 const externalDataList = document.getElementById("externalDataList");
 const prevButton = document.getElementById("prevButton");
@@ -1124,136 +1257,8 @@ loadItems(currentIndex);
 prevButton.addEventListener("click", handlePrevButtonClick);
 nextButton.addEventListener("click", handleNextButtonClick);
 
-function handleNextButtonClick() {
-	currentIndex += itemsPerPage;
-	loadItems(currentIndex);
-}
-
-// Initial load
-loadItems(currentIndex);
-
-// Add event listener for the Next button
-nextButton.addEventListener("click", handleNextButtonClick);
-
-// Start loading all items
-loadAllItems();
-
 // Initial load
 loadMoreItems();
 
 // Event listener for the "Load More" button
 loadMoreBtn.addEventListener("click", loadMoreItems);
-
-//loading page after submit button is clicked
-document.addEventListener("DOMContentLoaded", function () {
-	const form = document.querySelector(".rsvp-form");
-	const loadingContainer = document.getElementById("loading-container");
-	const hantarButton = document.getElementById("hantar-button");
-	const afterSubmitText = document.getElementById("after-submit-text"); // Add this line
-
-	form.addEventListener("submit", async function (event) {
-		event.preventDefault();
-
-		// Show loading container
-		loadingContainer.style.display = "block";
-		// Hide submit button
-		hantarButton.style.display = "none";
-
-		// Fetch form data
-		const formData = new FormData(form);
-
-		try {
-			// Send form data to the server using fetch
-			const response = await fetch(form.action, {
-				method: form.method,
-				body: formData,
-			});
-
-			if (response.ok) {
-				// If the response is successful, hide the entire form
-				form.style.display = "none";
-				// Show the modal
-				$("#rsvp-modal").modal("show");
-
-				// Update the text after submitting the form
-				if (afterSubmitText) {
-					afterSubmitText.innerHTML =
-						"<p class='text-center'>Terima Kasih !</p>" +
-						"<p class='text-center'>SEMOGA DENGAN KEHADIRAN DAN DOA RESTU PARA TETAMU AKAN MENYERIKAN MAJLIS KAMI SERTA MENDAPAT KEBERKATAN DARI ALLAH S.W.T JUA HENDAKNYA</p>";
-				}
-			} else {
-				// Handle error cases if needed
-				console.error("Error submitting the form:", response.statusText);
-				// Revert to the original form state
-				loadingContainer.style.display = "none";
-				hantarButton.style.display = "block";
-
-				// Update the text to an error message if needed
-				if (afterSubmitText) {
-					afterSubmitText.innerHTML =
-						"<p class='text-center'>Submission failed. Please try again.</p>";
-				}
-			}
-		} catch (error) {
-			// Handle network errors
-			console.error("Network error:", error.message);
-			// Revert to the original form state
-			loadingContainer.style.display = "none";
-			hantarButton.style.display = "block";
-
-			// Update the text to a network error message if needed
-			if (afterSubmitText) {
-				afterSubmitText.innerHTML =
-					"<p class='text-center'>Network error. Please check your internet connection and try again.</p>";
-			}
-		}
-	});
-});
-
-// Jumlah Kehadiran
-document.addEventListener("DOMContentLoaded", function () {
-	const hadirRadioYes = document.getElementById("radioButtonYes");
-	const hadirRadioNo = document.getElementById("radioButtonNo");
-	const jumlahKehadiranContainer = document.getElementById(
-		"jumlahKehadiranContainer"
-	);
-
-	const waktuDropdown = document.getElementById("waktu");
-
-	function updateWaktuVisibility() {
-		// Check if the element exists before trying to manipulate its style
-		if (waktuDropdown) {
-			waktuDropdown.style.display = hadirRadioYes.checked ? "block" : "none";
-		}
-	}
-
-	// ...
-
-	// Initial check on page load
-	updateWaktuVisibility();
-
-	function updateJumlahKehadiranVisibility() {
-		jumlahKehadiranContainer.style.display = hadirRadioYes.checked
-			? "block"
-			: "none";
-	}
-
-	// function updateWaktuVisibility() {
-	// 	// Add this function
-	// 	waktuDropdown.style.display = hadirRadioYes.checked ? "block" : "none";
-	// }
-
-	hadirRadioYes.addEventListener("change", function () {
-		updateJumlahKehadiranVisibility();
-		updateWaktuVisibility(); // Add this line
-	});
-
-	hadirRadioNo.addEventListener("change", function () {
-		updateJumlahKehadiranVisibility();
-		updateWaktuVisibility(); // Add this line
-	});
-
-	// Initial check on page load
-	updateJumlahKehadiranVisibility();
-	updateWaktuVisibility(); // Add this line
-});
