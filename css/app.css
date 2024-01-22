@@ -1,103 +1,315 @@
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    padding: 0 !important;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+	font-family: "Josefin Sans", sans-serif;
+	padding: 0 !important;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 .font-esthetic {
-    font-family: 'Sacramento', cursive !important;
-    color: #ffffff !important;
+	font-family: "Sacramento", cursive !important;
+	color: #ffffff !important;
 }
 
 .img-crop {
-    width: 14rem;
-    height: 14rem;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
+	width: 14rem;
+	height: 14rem;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
 }
 
-.img-crop>img {
-    display: inline;
-    margin: 0 auto;
-    height: auto;
-    width: 100%;
+.img-crop > img {
+	display: inline;
+	margin: 0 auto;
+	height: auto;
+	width: 100%;
 }
 
 .btn-music {
-    position: fixed;
-    bottom: 9vh;
-    right: 2vh;
-    z-index: 1055;
+	position: fixed;
+	bottom: 9vh;
+	right: 2vh;
+	z-index: 1055;
 }
 
 .loading-page {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #212529;
-    z-index: 1056 !important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #212529;
+	z-index: 1056 !important;
 }
 
 .card-body {
-    overflow-wrap: break-word !important;
+	overflow-wrap: break-word !important;
 }
 
 .mouse-animation {
-    padding: 0.25rem 0.625rem;
-    height: 2rem;
-    border: 0.1rem solid black;
-    border-radius: 1.4rem;
-    opacity: 0.75;
-    box-sizing: content-box;
+	padding: 0.25rem 0.625rem;
+	height: 2rem;
+	border: 0.1rem solid black;
+	border-radius: 1.4rem;
+	opacity: 0.75;
+	box-sizing: content-box;
 }
 
 @keyframes scroll {
-    0% {
-        opacity: 0;
-    }
+	0% {
+		opacity: 0;
+	}
 
-    10% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+	10% {
+		transform: translateY(0);
+		opacity: 1;
+	}
 
-    100% {
-        transform: translateY(1rem);
-        opacity: 0;
-    }
+	100% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
 }
 
-.mouse-animation>.scroll-animation {
-    width: 0.25rem;
-    height: 0.625rem;
-    border-radius: 25%;
-    background-color: black;
-    animation-name: scroll;
-    animation-duration: 2.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+.mouse-animation > .scroll-animation {
+	width: 0.25rem;
+	height: 0.625rem;
+	border-radius: 25%;
+	background-color: black;
+	animation-name: scroll;
+	animation-duration: 2.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }
 
 .dark-section {
-    background-color: #ffdbac !important;
-    margin-top: -5px;
-    margin-bottom: -5px;
+	background-color: #ffdbac !important;
+	margin-top: -5px;
+	margin-bottom: -5px;
 }
 
 footer {
-    background-color: #ffdbac !important;
-    margin-top: -5px;
-    padding-bottom: 4rem;
+	background-color: #ffdbac !important;
+	margin-top: -5px;
+	padding-bottom: 4rem;
+}
+
+.hero {
+	min-height: 750px;
+	background: url("../images/gallery/nikah.jpeg") center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+}
+.hero .down-arrow a {
+	color: #fff;
+}
+.hero h1 {
+	color: #fff;
+	margin-bottom: 40px;
+}
+.hero p.intro {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 300;
+	margin-bottom: 80px;
+}
+.hero .hero-content {
+	padding-top: 40%;
+}
+.hero .hero-content img {
+	width: 55%;
+	margin-bottom: 12%;
+}
+
+.hero-strip {
+	margin-top: 120px;
+	background: #333844 url("../img/polygonal-bg.jpg") no-repeat center center;
+	padding-bottom: 190px;
+	position: relative;
+}
+.hero-strip i {
+	font-family: "Nunito", sans-serif;
+	font-weight: 300;
+	font-size: 25px;
+	color: #f69d52;
+	vertical-align: top;
+	margin-left: -8px;
+	font-style: normal;
+}
+.hero-strip h2 {
+	color: #fff;
+	margin: 0 0 20px 0;
+}
+.hero-strip p {
+	color: #acb1b4;
+}
+.hero-strip .btn {
+	margin-top: 10px;
+}
+.hero-strip .logo-placeholder {
+	width: 230px;
+	height: 230px;
+	position: absolute;
+	bottom: -285px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.countdown-container {
+	background-color: #f8f9fa;
+	border: 1px solid #dcdcdc;
+	border-radius: 20px;
+	padding: 20px;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.formbold-mb-5 {
+	margin-bottom: 20px;
+}
+
+.formbold-pt-3 {
+	padding-top: 12px;
+}
+
+.formbold-main-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 48px;
+}
+
+.formbold-form-wrapper {
+	margin: 0 auto;
+	max-width: 550px;
+	width: 100%;
+	background: white;
+}
+
+.formbold-form-label {
+	display: block;
+	font-weight: 500;
+	font-size: 16px;
+	color: #07074d;
+	margin-bottom: 12px;
+}
+
+.formbold-form-label-2 {
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.formbold-form-input {
+	width: 100%;
+	padding: 12px 24px;
+	border-radius: 6px;
+	border: 1px solid #e0e0e0;
+	background: white;
+	font-weight: 500;
+	font-size: 16px;
+	color: #6b7280;
+	outline: none;
+	resize: none;
+}
+
+.formbold-form-input:focus {
+	border-color: #6a64f1;
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold-btn {
+	text-align: center;
+	font-size: 16px;
+	border-radius: 6px;
+	padding: 14px 32px;
+	border: none;
+	font-weight: 600;
+	background-color: #6a64f1;
+	color: white;
+	cursor: pointer;
+}
+
+.formbold-btn:hover {
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold--mx-3 {
+	margin-left: -12px;
+	margin-right: -12px;
+}
+
+.formbold-px-3 {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.formbold-radio {
+	width: 20px;
+	height: 20px;
+}
+
+.formbold-radio-label {
+	font-weight: 500;
+	font-size: 16px;
+	padding-left: 12px;
+	color: #070707;
+	padding-right: 20px;
+}
+
+@media (min-width: 540px) {
+	.sm\:w-half {
+		width: 50%;
+	}
+}
+
+#loading-container {
+	text-align: center;
+}
+
+.spinner {
+	border: 4px solid rgba(255, 255, 255, 0.3);
+	border-top: 4px solid #3498db;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	animation: spin 1s linear infinite;
+	margin-right: 8px;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.adwa {
+	font-family: "Belladia", sans-serif;
 }
