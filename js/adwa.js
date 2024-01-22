@@ -909,9 +909,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			zIndex: 1057,
 		});
 		animation();
-
-		await login();
-		timer();
 	};
 });
 

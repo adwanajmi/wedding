@@ -911,8 +911,8 @@ const buka = async () => {
 	});
 	animation();
 
-	await login();
-	timer();
+	// await login();
+	// timer();
 };
 
 // OK
@@ -952,29 +952,6 @@ const tamu = () => {
 	document.getElementById("form-nama").value = escapeHtml(name);
 	document.getElementById("nama-tamu").appendChild(div);
 };
-
-// OK
-// const login = async () => {
-// 	let body = document.querySelector("body");
-
-// 	await request("POST", "/api/session")
-// 		.body({
-// 			email: body.getAttribute("data-email"),
-// 			password: body.getAttribute("data-password"),
-// 		})
-// 		.then((res) => {
-// 			if (res.code == 200) {
-// 				localStorage.removeItem("token");
-// 				localStorage.setItem("token", res.data.token);
-// 				comment.ucapan();
-// 			}
-// 		})
-// 		.catch((err) => {
-// 			alert(`Terdapat kesalahan: ${err}`);
-// 			window.location.reload();
-// 			return;
-// 		});
-// };
 
 // OK
 const like = async (button) => {
@@ -1055,3 +1032,228 @@ const opacity = (nama) => {
 		}
 	}, 10);
 };
+
+//ucapan
+const externalDataList = document.getElementById("externalDataList");
+const prevButton = document.getElementById("prevButton");
+const nextButton = document.getElementById("nextButton");
+const loadingOverlay = document.getElementById("loadingOverlay");
+const paginationButtons = document.getElementById("paginationButtons");
+let currentIndex = 0;
+const itemsPerPage = 5;
+
+function showLoadingOverlay() {
+	loadingOverlay.style.display = "block";
+	paginationButtons.style.pointerEvents = "none"; // Disable buttons during loading
+}
+
+function hideLoadingOverlay() {
+	loadingOverlay.style.display = "none";
+	paginationButtons.style.pointerEvents = "auto"; // Enable buttons after loading
+}
+
+function loadItems(startIndex) {
+	showLoadingOverlay();
+
+	fetch(`https://api.apispreadsheets.com/data/9gldidVDZCDIuF3v/`)
+		.then((res) => {
+			if (res.status === 200) {
+				res.json().then((response) => {
+					const data = response.data;
+
+					// Clear existing items
+					externalDataList.innerHTML = "";
+
+					// Display 5 items starting from the given index
+					for (
+						let i = startIndex;
+						i < startIndex + itemsPerPage && i < data.length;
+						i++
+					) {
+						const item = data[i];
+
+						var listItem = document.createElement("li");
+						listItem.className = "list-group-item";
+
+						var nameBadge = document.createElement("span");
+						nameBadge.className = "badge bg-success";
+						nameBadge.textContent = item.Name;
+
+						var greetingsText = document.createElement("p");
+						greetingsText.textContent = item.Greetings;
+
+						// Append badges and greetings to the list item
+						listItem.appendChild(nameBadge);
+						listItem.appendChild(greetingsText);
+
+						// Append the list item to the list
+						externalDataList.appendChild(listItem);
+					}
+
+					// Enable/disable pagination buttons based on the current index
+					prevButton.disabled = currentIndex === 0;
+					nextButton.disabled = currentIndex + itemsPerPage >= data.length;
+
+					hideLoadingOverlay();
+				});
+			} else {
+				console.log("Error fetching data from external API");
+				hideLoadingOverlay();
+			}
+		})
+		.catch((err) => {
+			console.log(err);
+			hideLoadingOverlay();
+		});
+}
+
+function handlePrevButtonClick() {
+	currentIndex -= itemsPerPage;
+	loadItems(currentIndex);
+}
+
+function handleNextButtonClick() {
+	currentIndex += itemsPerPage;
+	loadItems(currentIndex);
+}
+
+// Initial load
+loadItems(currentIndex);
+
+// Add event listeners for the pagination buttons
+prevButton.addEventListener("click", handlePrevButtonClick);
+nextButton.addEventListener("click", handleNextButtonClick);
+
+function handleNextButtonClick() {
+	currentIndex += itemsPerPage;
+	loadItems(currentIndex);
+}
+
+// Initial load
+loadItems(currentIndex);
+
+// Add event listener for the Next button
+nextButton.addEventListener("click", handleNextButtonClick);
+
+// Start loading all items
+loadAllItems();
+
+// Initial load
+loadMoreItems();
+
+// Event listener for the "Load More" button
+loadMoreBtn.addEventListener("click", loadMoreItems);
+
+//loading page after submit button is clicked
+document.addEventListener("DOMContentLoaded", function () {
+	const form = document.querySelector(".rsvp-form");
+	const loadingContainer = document.getElementById("loading-container");
+	const hantarButton = document.getElementById("hantar-button");
+	const afterSubmitText = document.getElementById("after-submit-text"); // Add this line
+
+	form.addEventListener("submit", async function (event) {
+		event.preventDefault();
+
+		// Show loading container
+		loadingContainer.style.display = "block";
+		// Hide submit button
+		hantarButton.style.display = "none";
+
+		// Fetch form data
+		const formData = new FormData(form);
+
+		try {
+			// Send form data to the server using fetch
+			const response = await fetch(form.action, {
+				method: form.method,
+				body: formData,
+			});
+
+			if (response.ok) {
+				// If the response is successful, hide the entire form
+				form.style.display = "none";
+				// Show the modal
+				$("#rsvp-modal").modal("show");
+
+				// Update the text after submitting the form
+				if (afterSubmitText) {
+					afterSubmitText.innerHTML =
+						"<p class='text-center'>Terima Kasih !</p>" +
+						"<p class='text-center'>SEMOGA DENGAN KEHADIRAN DAN DOA RESTU PARA TETAMU AKAN MENYERIKAN MAJLIS KAMI SERTA MENDAPAT KEBERKATAN DARI ALLAH S.W.T JUA HENDAKNYA</p>";
+				}
+			} else {
+				// Handle error cases if needed
+				console.error("Error submitting the form:", response.statusText);
+				// Revert to the original form state
+				loadingContainer.style.display = "none";
+				hantarButton.style.display = "block";
+
+				// Update the text to an error message if needed
+				if (afterSubmitText) {
+					afterSubmitText.innerHTML =
+						"<p class='text-center'>Submission failed. Please try again.</p>";
+				}
+			}
+		} catch (error) {
+			// Handle network errors
+			console.error("Network error:", error.message);
+			// Revert to the original form state
+			loadingContainer.style.display = "none";
+			hantarButton.style.display = "block";
+
+			// Update the text to a network error message if needed
+			if (afterSubmitText) {
+				afterSubmitText.innerHTML =
+					"<p class='text-center'>Network error. Please check your internet connection and try again.</p>";
+			}
+		}
+	});
+});
+
+// Jumlah Kehadiran
+document.addEventListener("DOMContentLoaded", function () {
+	const hadirRadioYes = document.getElementById("radioButtonYes");
+	const hadirRadioNo = document.getElementById("radioButtonNo");
+	const jumlahKehadiranContainer = document.getElementById(
+		"jumlahKehadiranContainer"
+	);
+
+	const waktuDropdown = document.getElementById("waktu");
+
+	function updateWaktuVisibility() {
+		// Check if the element exists before trying to manipulate its style
+		if (waktuDropdown) {
+			waktuDropdown.style.display = hadirRadioYes.checked ? "block" : "none";
+		}
+	}
+
+	// ...
+
+	// Initial check on page load
+	updateWaktuVisibility();
+
+	function updateJumlahKehadiranVisibility() {
+		jumlahKehadiranContainer.style.display = hadirRadioYes.checked
+			? "block"
+			: "none";
+	}
+
+	// function updateWaktuVisibility() {
+	// 	// Add this function
+	// 	waktuDropdown.style.display = hadirRadioYes.checked ? "block" : "none";
+	// }
+
+	hadirRadioYes.addEventListener("change", function () {
+		updateJumlahKehadiranVisibility();
+		updateWaktuVisibility(); // Add this line
+	});
+
+	hadirRadioNo.addEventListener("change", function () {
+		updateJumlahKehadiranVisibility();
+		updateWaktuVisibility(); // Add this line
+	});
+
+	// Initial check on page load
+	updateJumlahKehadiranVisibility();
+	updateWaktuVisibility(); // Add this line
+});
