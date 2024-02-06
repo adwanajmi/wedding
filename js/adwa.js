@@ -1126,60 +1126,60 @@ function hideLoadingOverlay() {
 	paginationButtons.style.pointerEvents = "auto"; // Enable buttons after loading
 }
 
-function loadItems(startIndex) {
-	showLoadingOverlay();
+// function loadItems(startIndex) {
+// 	showLoadingOverlay();
 
-	fetch(`https://api.apispreadsheets.com/data/9gldidVDZCDIuF3v/`)
-		.then((res) => {
-			if (res.status === 200) {
-				res.json().then((response) => {
-					const data = response.data;
+// 	fetch(`https://api.apispreadsheets.com/data/9gldidVDZCDIuF3v/`)
+// 		.then((res) => {
+// 			if (res.status === 200) {
+// 				res.json().then((response) => {
+// 					const data = response.data;
 
-					// Clear existing items
-					externalDataList.innerHTML = "";
+// 					// Clear existing items
+// 					externalDataList.innerHTML = "";
 
-					// Display 5 items starting from the given index
-					for (
-						let i = startIndex;
-						i < startIndex + itemsPerPage && i < data.length;
-						i++
-					) {
-						const item = data[i];
+// 					// Display 5 items starting from the given index
+// 					for (
+// 						let i = startIndex;
+// 						i < startIndex + itemsPerPage && i < data.length;
+// 						i++
+// 					) {
+// 						const item = data[i];
 
-						var listItem = document.createElement("li");
-						listItem.className = "list-group-item";
+// 						var listItem = document.createElement("li");
+// 						listItem.className = "list-group-item";
 
-						var nameBadge = document.createElement("span");
-						nameBadge.className = "badge bg-success";
-						nameBadge.textContent = item.Name;
+// 						var nameBadge = document.createElement("span");
+// 						nameBadge.className = "badge bg-success";
+// 						nameBadge.textContent = item.Name;
 
-						var greetingsText = document.createElement("p");
-						greetingsText.textContent = item.Greetings;
+// 						var greetingsText = document.createElement("p");
+// 						greetingsText.textContent = item.Greetings;
 
-						// Append badges and greetings to the list item
-						listItem.appendChild(nameBadge);
-						listItem.appendChild(greetingsText);
+// 						// Append badges and greetings to the list item
+// 						listItem.appendChild(nameBadge);
+// 						listItem.appendChild(greetingsText);
 
-						// Append the list item to the list
-						externalDataList.appendChild(listItem);
-					}
+// 						// Append the list item to the list
+// 						externalDataList.appendChild(listItem);
+// 					}
 
-					// Enable/disable pagination buttons based on the current index
-					prevButton.disabled = currentIndex === 0;
-					nextButton.disabled = currentIndex + itemsPerPage >= data.length;
+// 					// Enable/disable pagination buttons based on the current index
+// 					prevButton.disabled = currentIndex === 0;
+// 					nextButton.disabled = currentIndex + itemsPerPage >= data.length;
 
-					hideLoadingOverlay();
-				});
-			} else {
-				console.log("Error fetching data from external API");
-				hideLoadingOverlay();
-			}
-		})
-		.catch((err) => {
-			console.log(err);
-			hideLoadingOverlay();
-		});
-}
+// 					hideLoadingOverlay();
+// 				});
+// 			} else {
+// 				console.log("Error fetching data from external API");
+// 				hideLoadingOverlay();
+// 			}
+// 		})
+// 		.catch((err) => {
+// 			console.log(err);
+// 			hideLoadingOverlay();
+// 		});
+// }
 
 function handlePrevButtonClick() {
 	currentIndex -= itemsPerPage;
